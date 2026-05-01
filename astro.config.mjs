@@ -5,6 +5,8 @@ import { SITE } from "./src/consts";
 import sitemap from "@astrojs/sitemap";
 import favicons from "astro-favicons";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.CANONICAL_URL,
@@ -60,5 +62,9 @@ export default defineConfig({
         ],
       },
     },
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
