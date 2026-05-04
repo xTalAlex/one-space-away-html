@@ -1,7 +1,8 @@
 ---
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { t } from "../i18n";
 
 interface Props {
   sliderName: string;
@@ -24,10 +25,10 @@ const {
     beforeAfter && (
       <div class="showcase-toggle">
         <button class="toggle-btn" data-view="before">
-          Before
+          {t.portfolio.before}
         </button>
         <button class="toggle-btn active" data-view="after">
-          After
+          {t.portfolio.after}
         </button>
       </div>
     )
@@ -98,7 +99,7 @@ const {
   }
 
   .toggle-btn::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     left: 0;

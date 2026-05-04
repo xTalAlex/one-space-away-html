@@ -1,25 +1,13 @@
 ---
-import { Image } from 'astro:assets';
-import twoWomenSittingImage from '/src/assets/images/two-women-sitting.png';
-
-const aboutContent = [
-  {
-    id: 1,
-    title: 'Our Mission',
-    text: "At One Space Away, we believe that great design isn't just about aesthetics — it's about creating spaces that feel like home. That's why we take the time to understand your vision, lifestyle, and needs, ensuring every detail is tailored to you.",
-  },
-  {
-    id: 2,
-    title: 'Our Vision',
-    text: 'With this deep understanding, we transform ideas into thoughtfully designed interiors. From carefully selected materials to customized layouts, we focus on every detail to make your home uniquely yours.',
-  },
-];
+import { Image } from "astro:assets";
+import twoWomenSittingImage from "/src/assets/images/two-women-sitting.png";
+import { t } from "../i18n";
 ---
 
 <section id="about" class="about">
   <div class="section-container">
-    <span class="section-tag">OUR STORY</span>
-    <h2 class="section-title">Every home has a story.</h2>
+    <span class="section-tag">{t.about.tag}</span>
+    <h2 class="section-title">{t.about.title}</h2>
     <div class="about-container">
       <div class="about-image-wrapper">
         <Image
@@ -30,7 +18,7 @@ const aboutContent = [
       </div>
       <div class="about-content">
         {
-          aboutContent.map(content => (
+          t.about.items.map((content) => (
             <>
               <h3 class="section-subtitle about-subtitle">{content.title}</h3>
               <p class="about-text">{content.text}</p>
