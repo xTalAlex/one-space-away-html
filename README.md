@@ -64,6 +64,10 @@ This template uses [Modern Font Stacks](https://modernfontstacks.com/) — syste
 
 Font stacks are configured in `src/styles/global.css` under `@theme`.
 
+## Favicon
+
+Generated with [RealFaviconGenerator](https://realfavicongenerator.net/). Static files in `public/`.
+
 ## Technical Details
 
 Carousels: Powered by **Swiper.js.** Initialization logic is in `utils/baseSwiper.ts`.

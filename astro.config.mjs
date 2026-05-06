@@ -1,10 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import { SITE } from "./src/consts";
-
 import sitemap from "@astrojs/sitemap";
-import favicons from "astro-favicons";
-
 import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
@@ -16,7 +13,7 @@ export default defineConfig({
     inlineStylesheets: "always",
   },
 
-  integrations: [sitemap(), favicons()],
+  integrations: [sitemap()],
 
   security: {
     csp: {
