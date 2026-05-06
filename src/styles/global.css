@@ -6,6 +6,12 @@
   --ease-elastic: cubic-bezier(0.68, -3, 0.27, 5);
 }
 
+@layer base {
+  section {
+    padding: var(--px-96) var(--px-64);
+  }
+}
+
 :focus-visible {
   outline: 3px solid var(--color-focus);
   border-radius: var(--px-2);
@@ -18,10 +24,6 @@ html {
 
 body {
   font-size: var(--text-base);
-}
-
-section {
-  padding: var(--px-96) var(--px-64);
 }
 
 p {
@@ -202,8 +204,10 @@ p {
 }
 
 @media screen and (max-width: 64rem) {
-  section {
-    padding: var(--px-80) var(--px-28);
+  @layer base {
+    section {
+      padding: var(--px-80) var(--px-28);
+    }
   }
 
   .section-title {
@@ -212,8 +216,10 @@ p {
 }
 
 @media screen and (max-width: 42.188rem) {
-  section {
-    padding: var(--px-64) var(--px-20);
+  @layer base {
+    section {
+      padding: var(--px-64) var(--px-20);
+    }
   }
 
   .section-tag {
