@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
+import BaseLayout from "@layouts/BaseLayout.astro";
 
 interface Props {
   title: string;
@@ -14,75 +14,15 @@ const { title, description, errorCode, errorMessage, errorDescription } =
 ---
 
 <BaseLayout title={title} description={description}>
-  <section id="error" class="error">
-    <div class="error-container">
-      <div class="error-content">
-        <h1 class="error-title">{errorCode}</h1>
-        <p class="error-message">{errorMessage}</p>
-        <p class="error-description">{errorDescription}</p>
-        <a href="/" class="btn btn--primary">GO TO HOMEPAGE</a>
-      </div>
+  <section
+    id="error"
+    class="min-h-screen pt-8 pb-5 md:pt-12 md:pb-8 lg:pt-28 lg:pb-14 flex items-center justify-center"
+  >
+    <div class="w-full flex flex-col items-center text-center max-w-xl">
+      <h1 class="text-6xl lg:text-7xl font-bold mb-6">{errorCode}</h1>
+      <p class="text-2xl font-medium opacity-100 mb-4">{errorMessage}</p>
+      <p class="text-lg mb-8">{errorDescription}</p>
+      <a href="/" class="btn btn--primary inline-block">GO TO HOMEPAGE</a>
     </div>
   </section>
-
-  <style>
-    .error {
-      min-height: 100vh;
-      padding-block: 6.688rem var(--px-56);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .error-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      max-width: 37.5rem;
-    }
-
-    .error-title {
-      font-size: clamp(3rem, 6vw, var(--text-xxl));
-      font-weight: 700;
-      margin-bottom: var(--px-24);
-    }
-
-    .error-message {
-      font-size: var(--text-3xl);
-      font-weight: 500;
-      opacity: 1;
-      margin-bottom: var(--px-16);
-    }
-
-    .error-description {
-      font-size: var(--text-lg);
-      margin-bottom: var(--px-32);
-    }
-
-    .btn {
-      display: inline-block;
-    }
-
-    @media screen and (max-width: 64rem) {
-      .error {
-        padding-block: var(--px-48) var(--px-32);
-      }
-
-      .error-title {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-      }
-    }
-
-    @media screen and (max-width: 42.188rem) {
-      .error {
-        padding-block: var(--px-32) var(--px-20);
-      }
-
-      .error-title {
-        font-size: clamp(2rem, 4vw, 3rem);
-      }
-    }
-  </style>
 </BaseLayout>
