@@ -25,6 +25,10 @@ export const en = {
     after: "After",
     projects: [
       {
+        images: {
+          before: "Unfinished, under renovation with construction tools, exposed wiring, and partially installed marble-patterned tiles.",
+          after: "A modern, open-concept living space with a wooden table, chairs, and a metal staircase. The room is lit by ceiling lights and natural sunlight from large windows.",
+        },
         challenge: {
           title: "Client's Challenge",
           text: "We wanted to transform our unfinished space into a modern, functional home with an open-concept design that maximizes space, brings in plenty of natural light, and fits seamlessly into our daily lives.",
@@ -35,6 +39,10 @@ export const en = {
         },
       },
       {
+        images: {
+          before: "An older kitchen with white cabinets, beige tile flooring, and white appliances.",
+          after: "A modern kitchen with dark wood cabinets, stainless steel appliances, and a stone backsplash.",
+        },
         challenge: {
           title: "Client's Challenge",
           text: "Our kitchen felt outdated. The all-white design was plain, and the layout wasn't as functional as it could be. We wanted a space with better lighting that made cooking more enjoyable.",

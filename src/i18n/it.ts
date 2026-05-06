@@ -25,6 +25,10 @@ export const it = {
     after: "Dopo",
     projects: [
       {
+        images: {
+          before: "Spazio non finito, in ristrutturazione con attrezzi da cantiere, cavi scoperti e piastrelle in marmo parzialmente installate.",
+          after: "Uno spazio abitativo moderno e open-space con un tavolo in legno, sedie e una scala in metallo. La stanza è illuminata da luci a soffitto e luce naturale proveniente da ampie finestre.",
+        },
         challenge: {
           title: "La Sfida del Cliente",
           text: "Volevamo trasformare il nostro spazio incompiuto in una casa moderna e funzionale con un design open-space che massimizzasse gli spazi, facesse entrare molta luce naturale e si adattasse perfettamente alla nostra vita quotidiana.",
@@ -35,6 +39,10 @@ export const it = {
         },
       },
       {
+        images: {
+          before: "Una cucina datata con mobili bianchi, pavimento in piastrelle beige e elettrodomestici bianchi.",
+          after: "Una cucina moderna con mobili in legno scuro, elettrodomestici in acciaio inox e un rivestimento in pietra.",
+        },
         challenge: {
           title: "La Sfida del Cliente",
           text: "La nostra cucina sembrava obsoleta. Il design tutto bianco era monotono e la disposizione non era funzionale quanto avrebbe potuto. Volevamo uno spazio con un'illuminazione migliore che rendesse piacevole cucinare.",
