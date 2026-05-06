@@ -1,9 +1,8 @@
 ---
 import { SITE } from "@consts";
+import { t } from "@src/i18n";
 import BaseLayout from "@src/layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
-
-import { t } from "@src/i18n";
 
 export async function getStaticPaths() {
   const legal = await getCollection("legal");

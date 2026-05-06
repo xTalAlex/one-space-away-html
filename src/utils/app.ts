@@ -1,6 +1,6 @@
-import Alpine from "alpinejs";
 import collapse from "@alpinejs/collapse";
 import intersect from "@alpinejs/intersect";
+import Alpine from "alpinejs";
 
 Alpine.plugin(collapse);
 Alpine.plugin(intersect);
