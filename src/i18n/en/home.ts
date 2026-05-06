@@ -1,16 +1,4 @@
-export const en = {
-  skipToContent: "Skip to content",
-  header: {
-    logo: "One Space Away",
-    nav: {
-      home: "Home",
-      portfolio: "Portfolio",
-      howItWorks: "How it Works",
-      about: "About",
-      contact: "Contact",
-    },
-    cta: "Let's work together",
-  },
+export const home = {
   hero: {
     title: "Home, just the way you like.",
     subtitle: "Discover the joy of living in a space that feels truly yours.",
@@ -105,7 +93,7 @@ export const en = {
   },
   faq: {
     tag: "FAQ",
-    title: "We’ve got answers.",
+    title: "We've got answers.",
     items: [
       {
         question: "What services do you offer?",
@@ -169,22 +157,5 @@ export const en = {
       errorTitle: "Error",
       errorText: "Failed to send message. Please try again later.",
     },
-  },
-  footer: {
-    company: "Company",
-    socialMedia: "Social Media",
-    legal: "Legal & Press",
-    phoneLabel: "T.",
-    emailLabel: "E.",
-    copyright: "All rights reserved.",
-    location: "Based in Beverly Hills, California.",
-    links: {
-      privacyPolicy: "Privacy Policy",
-      termsConditions: "Terms & Conditions",
-      sitemap: "SiteMap",
-    },
-  },
-  legal: {
-    effectiveDate: "Effective Date:",
   },
 };

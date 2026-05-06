@@ -1,20 +1,17 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ButtonPrimary from "@components/ui/ButtonPrimary.astro";
+import { t } from "../i18n";
 
 interface Props {
-  title: string;
-  description: string;
-  errorCode: string;
-  errorMessage: string;
-  errorDescription: string;
+  errorCode: "404" | "500" | "503";
 }
 
-const { title, description, errorCode, errorMessage, errorDescription } =
-  Astro.props;
+const { errorCode } = Astro.props;
+const error = t.errors[errorCode];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={error.title} description={error.description}>
   <section
     id="error"
     class="min-h-screen pt-8 pb-5 md:pt-12 md:pb-8 lg:pt-28 lg:pb-14 flex items-center justify-center"
@@ -22,10 +19,11 @@ const { title, description, errorCode, errorMessage, errorDescription } =
     <div class="w-full flex flex-col items-center text-center max-w-xl">
       <h1 class="text-6xl lg:text-7xl font-bold mb-6">{errorCode}</h1>
       <p class="leading-relaxed text-2xl font-medium mb-4">
-        {errorMessage}
+        {error.message}
       </p>
-      <p class="leading-relaxed opacity-80 text-lg mb-8">{errorDescription}</p>
-      <ButtonPrimary href="/" class="inline-block">GO TO HOMEPAGE</ButtonPrimary
+      <p class="leading-relaxed opacity-80 text-lg mb-8">{error.text}</p>
+      <ButtonPrimary href="/" class="inline-block"
+        >{t.errors.backHome}</ButtonPrimary
       >
     </div>
   </section>

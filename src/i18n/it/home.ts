@@ -1,16 +1,4 @@
-export const it = {
-  skipToContent: "Vai al contenuto",
-  header: {
-    logo: "One Space Away",
-    nav: {
-      home: "Home",
-      portfolio: "Portfolio",
-      howItWorks: "Come Funziona",
-      about: "Chi Siamo",
-      contact: "Contatti",
-    },
-    cta: "Lavoriamo insieme",
-  },
+export const home = {
   hero: {
     title: "La casa, esattamente come la vuoi.",
     subtitle: "Scopri la gioia di vivere in uno spazio che senti veramente tuo.",
@@ -160,31 +148,14 @@ export const it = {
       email: "Email",
       emailPlaceholder: "Inserisci la tua email",
       project: "Dettagli del progetto",
-      projectPlaceholder: "Parlaci un p\u00F3 del tuo progetto",
+      projectPlaceholder: "Parlaci un pó del tuo progetto",
       submit: "INVIA MESSAGGIO",
       sending: "Invio...",
       disclaimer: "Tutti i campi sono obbligatori. Inviando il modulo accetti i {terms} e la {privacy}.",
       successTitle: "Inviato",
-      successText: "Il tuo messaggio \u00E8 stato inviato con successo. Ti risponderemo a breve.",
+      successText: "Il tuo messaggio è stato inviato con successo. Ti risponderemo a breve.",
       errorTitle: "Errore",
-      errorText: "Invio del messaggio fallito. Riprova pi\u00FA tardi.",
+      errorText: "Invio del messaggio fallito. Riprova più tardi.",
     },
-  },
-  footer: {
-    company: "Azienda",
-    socialMedia: "Social Media",
-    legal: "Legale e Stampa",
-    phoneLabel: "T.",
-    emailLabel: "E.",
-    copyright: "Tutti i diritti riservati.",
-    location: "Con sede a Beverly Hills, California.",
-    links: {
-      privacyPolicy: "Informativa sulla Privacy",
-      termsConditions: "Termini & Condizioni",
-      sitemap: "Mappa del Sito",
-    },
-  },
-  legal: {
-    effectiveDate: "Data di entrata in vigore:",
   },
 };
