@@ -5,4 +5,7 @@
 @theme {
   --font-sans:
     Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+
+  --color-black: var(--color-zinc-950);
+  --color-white: var(--color-stone-50);
 }
