@@ -309,10 +309,10 @@ const testimonials = [
 </style>
 
 <script>
-  import { initSwiper } from "@utils/initSwiper";
+  import { createSwiper } from "@utils/baseSwiper";
 
   const initTestimonialsSlider = () => {
-    const testimonialsSwiper = initSwiper("testimonials", {
+    const testimonialsSwiper = createSwiper("testimonials", {
       pagination: {
         el: ".testimonials-pagination",
         clickable: true,

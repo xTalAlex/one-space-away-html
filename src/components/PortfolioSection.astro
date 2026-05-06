@@ -188,10 +188,10 @@ const projects = [
 </style>
 
 <script>
-  import { initSwiper } from "@utils/initSwiper";
+  import { createSwiper } from "@utils/baseSwiper";
 
   function initPortfolioSlider() {
-    const portfolioSwiper = initSwiper("portfolio", {
+    const portfolioSwiper = createSwiper("portfolio", {
       spaceBetween: 30,
       navigation: {
         nextEl: ".portfolio-next",

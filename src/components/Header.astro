@@ -135,16 +135,16 @@ import { t } from "../i18n";
 </style>
 
 <script>
-  import { observeHeader } from "@utils/observeHeader";
-  import { initMobileMenu } from "@utils/initMobileMenu";
+  import { initHeaderObserver } from "@utils/headerObserver";
+  import { initMobileMenu } from "@utils/mobileMenu";
 
-  let headerCleanup = observeHeader();
+  let headerCleanup = initHeaderObserver();
   let menuCleanup = initMobileMenu();
 
   document.addEventListener("astro:after-swap", () => {
     headerCleanup?.();
     menuCleanup?.();
-    headerCleanup = observeHeader();
+    headerCleanup = initHeaderObserver();
     menuCleanup = initMobileMenu();
   });
 </script>

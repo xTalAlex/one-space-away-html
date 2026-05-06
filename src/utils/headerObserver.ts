@@ -1,4 +1,4 @@
-export function observeHeader() {
+export function initHeaderObserver() {
   const trigger = document.getElementById("trigger");
   const header = document.getElementById("header");
 

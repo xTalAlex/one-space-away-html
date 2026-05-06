@@ -2,7 +2,7 @@ import Swiper from "swiper";
 import { Navigation, Pagination, Keyboard } from "swiper/modules";
 import type { SwiperOptions } from "swiper/types";
 
-export function initSwiper(sliderName: string, swiperConfig: SwiperOptions) {
+export function createSwiper(sliderName: string, swiperConfig: SwiperOptions) {
   return new Swiper(`.${sliderName}-swiper`, {
     modules: [Navigation, Pagination, Keyboard],
     observer: true,
