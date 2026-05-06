@@ -1,6 +1,6 @@
 ---
-title: 'Privacy Policy'
-lastUpdated: '07-04-2025'
+title: "Privacy Policy"
+lastUpdated: "07-04-2025"
 ---
 
 > **Note:** This is just an example privacy policy for a website built with

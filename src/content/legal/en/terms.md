@@ -1,6 +1,6 @@
 ---
-title: 'Terms and Conditions'
-lastUpdated: '07-04-2025'
+title: "Terms and Conditions"
+lastUpdated: "07-04-2025"
 ---
 
 > **Note:** This is just an example Terms of Service for a portfolio website

@@ -5,7 +5,11 @@ import { SITE } from "@consts";
 // Types
 type Translations = typeof DefaultTranslations;
 type Namespace = keyof typeof defaultNamespaces;
-type UnionToIntersection<U> = (U extends unknown ? (k: U) => void : never) extends (k: infer I) => void ? I : never;
+type UnionToIntersection<U> = (
+  U extends unknown ? (k: U) => void : never
+) extends (k: infer I) => void
+  ? I
+  : never;
 
 // Variables
 const locale = SITE.LOCALE ?? "en";
@@ -36,7 +40,9 @@ const namespaces = Object.fromEntries(
 // Functions
 function getTranslations<T extends Namespace>(...keys: T[]) {
   const ns = namespaces[locale];
-  return Object.assign({}, ...keys.map((k) => ns[k])) as UnionToIntersection<(typeof defaultNamespaces)[T]>;
+  return Object.assign({}, ...keys.map((k) => ns[k])) as UnionToIntersection<
+    (typeof defaultNamespaces)[T]
+  >;
 }
 
 // Exports

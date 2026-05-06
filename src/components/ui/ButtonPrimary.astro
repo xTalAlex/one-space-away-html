@@ -12,15 +12,15 @@ const Element = href ? "a" : "button";
 <Element
   href={href}
   class:list={[
-    "flex items-center justify-center cursor-pointer whitespace-nowrap",
+    "flex cursor-pointer items-center justify-center whitespace-nowrap",
     !compact && "px-8 py-4",
-    "bg-black text-white rounded-xs text-sm tracking-widest font-bold",
-    "relative overflow-hidden z-1 transition-transform duration-200 ease-in-out",
-    "before:content-[''] before:block before:w-full before:h-[200%] before:absolute before:top-0 before:left-0",
-    "before:scale-70 before:translate-y-1/2 before:bg-neutral-800 before:rounded-full",
-    "before:transition-all before:duration-250 before:ease-in-out before:-z-10",
-    "active:before:scale-x-200 active:before:scale-y-100 active:before:-translate-y-1/6",
-    "hover:before:scale-x-200 hover:before:scale-y-100 hover:before:-translate-y-1/6",
+    "rounded-xs bg-black text-sm font-bold tracking-widest text-white",
+    "relative z-1 overflow-hidden transition-transform duration-200 ease-in-out",
+    "before:absolute before:top-0 before:left-0 before:block before:h-[200%] before:w-full before:content-['']",
+    "before:translate-y-1/2 before:scale-70 before:rounded-full before:bg-neutral-800",
+    "before:-z-10 before:transition-all before:duration-250 before:ease-in-out",
+    "active:before:-translate-y-1/6 active:before:scale-x-200 active:before:scale-y-100",
+    "hover:before:-translate-y-1/6 hover:before:scale-x-200 hover:before:scale-y-100",
     className,
   ]}
 >

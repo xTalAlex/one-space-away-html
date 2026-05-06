@@ -44,96 +44,96 @@ const testimonials = [
 ---
 
 <SectionWrapper id="testimonials">
-    <SectionHeader tag={t.testimonials.tag} title={t.testimonials.title} />
+  <SectionHeader tag={t.testimonials.tag} title={t.testimonials.title} />
 
-    <BaseSwiper sliderName="testimonials" navigation={false}>
-      {
-        testimonials.map((testimonial) => (
-          <div class="swiper-slide">
-            <article
-              class:list={[
-                "flex flex-col rounded-lg overflow-hidden h-full max-w-93",
-                testimonial.type === "video" && "aspect-2/3 max-h-137.5",
-              ]}
-            >
-              {testimonial.type === "image" ? (
-                <>
-                  <div class="flex items-center gap-4 mt-8 mb-6 p-4 md:p-0">
-                    <div class="w-20 h-20 overflow-hidden rounded-full shrink-0">
-                      <Image
-                        class="w-full h-full object-cover"
-                        src={testimonial.client.image as ImageMetadata}
-                        alt={testimonial.client.name}
-                        width={160}
-                        height={160}
-                      />
-                    </div>
-                    <div class="flex flex-col gap-1">
-                      <cite class="text-xl font-semibold not-italic">
-                        {testimonial.client.name}
-                      </cite>
-                      <span>{testimonial.client.location}</span>
-                    </div>
+  <BaseSwiper sliderName="testimonials" navigation={false}>
+    {
+      testimonials.map((testimonial) => (
+        <div class="swiper-slide">
+          <article
+            class:list={[
+              "flex h-full max-w-93 flex-col overflow-hidden rounded-lg",
+              testimonial.type === "video" && "aspect-2/3 max-h-137.5",
+            ]}
+          >
+            {testimonial.type === "image" ? (
+              <>
+                <div class="mt-8 mb-6 flex items-center gap-4 p-4 md:p-0">
+                  <div class="h-20 w-20 shrink-0 overflow-hidden rounded-full">
+                    <Image
+                      class="h-full w-full object-cover"
+                      src={testimonial.client.image as ImageMetadata}
+                      alt={testimonial.client.name}
+                      width={160}
+                      height={160}
+                    />
                   </div>
-                  <blockquote class="p-4 md:p-0">
-                    <p>{testimonial.content}</p>
-                  </blockquote>
-                </>
-              ) : (
-                <div
-                  class:list={[
-                    "testimonial-video-wrapper w-full h-full relative bg-black [&.playing]:before:opacity-0",
-                    "before:content-[''] before:absolute before:inset-0 before:bg-black/30 before:opacity-100 before:transition-opacity before:duration-300 before:ease-linear",
-                  ]}
-                >
-                  <video
-                    class="w-full h-full object-cover testimonial-video"
-                    playsinline
-                    loop
-                    disablepictureinpicture
-                    preload="none"
-                    poster={testimonial.video?.poster}
-                  >
-                    <source src={testimonial.video?.src} type="video/mp4" />
-                  </video>
-                  <div class="absolute top-2 left-3.5 right-2 md:top-2.5 md:left-4 md:right-4 flex justify-between items-center text-white">
-                    <div class="flex flex-col gap-1">
-                      <cite class="text-xl font-semibold not-italic drop-shadow-sm">
-                        {testimonial.client.name}
-                      </cite>
-                      <span class="drop-shadow-sm">
-                        {testimonial.client.location}
-                      </span>
-                    </div>
-                    <button
-                      class="video-control group flex size-10 rounded-full bg-white border-none cursor-pointer items-center justify-center transition-all duration-300 shadow-sm hover:scale-110 hover:shadow-md"
-                      aria-label="Toggle video playback"
-                    >
-                      <svg
-                        class="h-5 pl-0.75 group-[.playing]:hidden"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 384 512"
-                        stroke="currentColor"
-                      >
-                        <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
-                      </svg>
-                      <svg
-                        class="h-5 hidden group-[.playing]:block"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 320 512"
-                        stroke="currentColor"
-                      >
-                        <path d="M48 64C21.5 64 0 85.5 0 112L0 400c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48L48 64zm192 0c-26.5 0-48 21.5-48 48l0 288c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48l-32 0z" />
-                      </svg>
-                    </button>
+                  <div class="flex flex-col gap-1">
+                    <cite class="text-xl font-semibold not-italic">
+                      {testimonial.client.name}
+                    </cite>
+                    <span>{testimonial.client.location}</span>
                   </div>
                 </div>
-              )}
-            </article>
-          </div>
-        ))
-      }
-    </BaseSwiper>
+                <blockquote class="p-4 md:p-0">
+                  <p>{testimonial.content}</p>
+                </blockquote>
+              </>
+            ) : (
+              <div
+                class:list={[
+                  "testimonial-video-wrapper relative h-full w-full bg-black [&.playing]:before:opacity-0",
+                  "before:absolute before:inset-0 before:bg-black/30 before:opacity-100 before:transition-opacity before:duration-300 before:ease-linear before:content-['']",
+                ]}
+              >
+                <video
+                  class="testimonial-video h-full w-full object-cover"
+                  playsinline
+                  loop
+                  disablepictureinpicture
+                  preload="none"
+                  poster={testimonial.video?.poster}
+                >
+                  <source src={testimonial.video?.src} type="video/mp4" />
+                </video>
+                <div class="absolute top-2 right-2 left-3.5 flex items-center justify-between text-white md:top-2.5 md:right-4 md:left-4">
+                  <div class="flex flex-col gap-1">
+                    <cite class="text-xl font-semibold not-italic drop-shadow-sm">
+                      {testimonial.client.name}
+                    </cite>
+                    <span class="drop-shadow-sm">
+                      {testimonial.client.location}
+                    </span>
+                  </div>
+                  <button
+                    class="video-control group flex size-10 cursor-pointer items-center justify-center rounded-full border-none bg-white shadow-sm transition-all duration-300 hover:scale-110 hover:shadow-md"
+                    aria-label="Toggle video playback"
+                  >
+                    <svg
+                      class="h-5 pl-0.75 group-[.playing]:hidden"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 384 512"
+                      stroke="currentColor"
+                    >
+                      <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80L0 432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z" />
+                    </svg>
+                    <svg
+                      class="hidden h-5 group-[.playing]:block"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 320 512"
+                      stroke="currentColor"
+                    >
+                      <path d="M48 64C21.5 64 0 85.5 0 112L0 400c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48L48 64zm192 0c-26.5 0-48 21.5-48 48l0 288c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-288c0-26.5-21.5-48-48-48l-32 0z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            )}
+          </article>
+        </div>
+      ))
+    }
+  </BaseSwiper>
 </SectionWrapper>
 
 <script>

@@ -8,7 +8,12 @@ interface Props {
   py?: string;
 }
 
-const { id, class: className = "", containerClass = "", py = "py-16 sm:py-20 lg:py-24" } = Astro.props;
+const {
+  id,
+  class: className = "",
+  containerClass = "",
+  py = "py-16 sm:py-20 lg:py-24",
+} = Astro.props;
 ---
 
 <section id={id} class:list={[py, "px-5 sm:px-7 lg:px-16", className]}>

@@ -5,15 +5,15 @@ import ButtonSecondary from "@components/ui/ButtonSecondary.astro";
 
 <header
   id="header"
-  class="fixed top-0 left-0 w-full flex px-4 lg:px-8 h-20 z-50 transition-all duration-200 ease-in-out [&.scrolled]:h-16 [&.scrolled]:backdrop-blur-[10px] [&.scrolled]:bg-white/95 [&.scrolled]:shadow-sm"
+  class="fixed top-0 left-0 z-50 flex h-20 w-full px-4 transition-all duration-200 ease-in-out lg:px-8 [&.scrolled]:h-16 [&.scrolled]:bg-white/95 [&.scrolled]:shadow-sm [&.scrolled]:backdrop-blur-[10px]"
 >
   <div
     id="mobile-overlay"
-    class="fixed top-0 left-0 w-full h-screen bg-black/50 backdrop-blur-sm z-50 opacity-0 invisible transition-all duration-300 ease-in-out [&.active]:opacity-100 [&.active]:visible"
+    class="invisible fixed top-0 left-0 z-50 h-screen w-full bg-black/50 opacity-0 backdrop-blur-sm transition-all duration-300 ease-in-out [&.active]:visible [&.active]:opacity-100"
   >
   </div>
   <nav
-    class="w-full max-w-7xl mx-auto relative flex items-center justify-between text-base font-medium"
+    class="relative mx-auto flex w-full max-w-7xl items-center justify-between text-base font-medium"
     role="navigation"
     aria-label="Main navigation"
   >
@@ -25,36 +25,36 @@ import ButtonSecondary from "@components/ui/ButtonSecondary.astro";
 
     <div
       id="nav-content"
-      class="[&.active]:right-0 max-lg:z-50 max-lg:fixed max-lg:top-0 max-lg:-right-full max-lg:h-screen max-lg:w-full max-lg:max-w-75 max-lg:bg-white max-lg:flex-col max-lg:pt-28 max-lg:px-4 max-lg:pb-8 max-lg:transition-[right] max-lg:duration-300 max-lg:ease-in-out max-lg:shadow-[-5px_0_15px_rgba(0,0,0,0.1)] max-lg:justify-start"
+      class="max-lg:fixed max-lg:top-0 max-lg:-right-full max-lg:z-50 max-lg:h-screen max-lg:w-full max-lg:max-w-75 max-lg:flex-col max-lg:justify-start max-lg:bg-white max-lg:px-4 max-lg:pt-28 max-lg:pb-8 max-lg:shadow-[-5px_0_15px_rgba(0,0,0,0.1)] max-lg:transition-[right] max-lg:duration-300 max-lg:ease-in-out [&.active]:right-0"
     >
       <ul
-        class="flex max-lg:flex-col max-lg:gap-5 max-lg:mb-10 max-lg:justify-start"
+        class="flex max-lg:mb-10 max-lg:flex-col max-lg:justify-start max-lg:gap-5"
       >
         <li class="lg:mx-4">
           <a
             href="/"
-            class="nav-link hover:opacity-100 flex opacity-65 text-xl lg:text-base transition-all duration-200 ease-out active:opacity-100 active:scale-95"
+            class="nav-link flex text-xl opacity-65 transition-all duration-200 ease-out hover:opacity-100 active:scale-95 active:opacity-100 lg:text-base"
             >{t.header.nav.home}</a
           >
         </li>
         <li class="lg:mx-4">
           <a
             href="/#portfolio"
-            class="nav-link hover:opacity-100 flex opacity-65 text-xl lg:text-base transition-all duration-200 ease-out active:opacity-100 active:scale-95"
+            class="nav-link flex text-xl opacity-65 transition-all duration-200 ease-out hover:opacity-100 active:scale-95 active:opacity-100 lg:text-base"
             >{t.header.nav.portfolio}</a
           >
         </li>
         <li class="lg:mx-4">
           <a
             href="/#how-it-works"
-            class="nav-link hover:opacity-100 flex opacity-65 text-xl lg:text-base transition-all duration-200 ease-out active:opacity-100 active:scale-95"
+            class="nav-link flex text-xl opacity-65 transition-all duration-200 ease-out hover:opacity-100 active:scale-95 active:opacity-100 lg:text-base"
             >{t.header.nav.howItWorks}</a
           >
         </li>
         <li class="lg:mx-4">
           <a
             href="/#about"
-            class="nav-link hover:opacity-100 flex opacity-65 text-xl lg:text-base transition-all duration-200 ease-out active:opacity-100 active:scale-95"
+            class="nav-link flex text-xl opacity-65 transition-all duration-200 ease-out hover:opacity-100 active:scale-95 active:opacity-100 lg:text-base"
             >{t.header.nav.about}</a
           >
         </li>
@@ -62,7 +62,7 @@ import ButtonSecondary from "@components/ui/ButtonSecondary.astro";
         <li class="lg:mx-4">
           <a
             href="/#contact"
-            class="nav-link hover:opacity-100 flex opacity-65 text-xl lg:text-base transition-all duration-200 ease-out active:opacity-100 active:scale-95"
+            class="nav-link flex text-xl opacity-65 transition-all duration-200 ease-out hover:opacity-100 active:scale-95 active:opacity-100 lg:text-base"
             >{t.header.nav.contact}</a
           >
         </li>
@@ -70,7 +70,7 @@ import ButtonSecondary from "@components/ui/ButtonSecondary.astro";
 
       <ButtonSecondary
         href="/#contact"
-        class="nav-link hover:opacity-100 inline-block lg:hidden"
+        class="nav-link inline-block hover:opacity-100 lg:hidden"
         innerClass="border-b-2 border-b-current text-base block"
       >
         {t.header.cta}
@@ -80,7 +80,7 @@ import ButtonSecondary from "@components/ui/ButtonSecondary.astro";
     <!-- Desktop CTA -->
     <ButtonSecondary
       href="/#contact"
-      class="nav-link hover:opacity-100 hidden lg:inline-block"
+      class="nav-link hidden hover:opacity-100 lg:inline-block"
       innerClass="border-b-2 border-b-current text-base block"
     >
       {t.header.cta}
@@ -88,18 +88,18 @@ import ButtonSecondary from "@components/ui/ButtonSecondary.astro";
 
     <button
       id="hamburger"
-      class="group appearance-none flex lg:hidden flex-col justify-between w-7 h-5 cursor-pointer z-50"
+      class="group z-50 flex h-5 w-7 cursor-pointer appearance-none flex-col justify-between lg:hidden"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
       <span
-        class="block w-full h-0.5 bg-current transition-transform duration-250 ease-in-out group-[.active]:translate-y-2 group-[.active]:rotate-45"
+        class="block h-0.5 w-full bg-current transition-transform duration-250 ease-in-out group-[.active]:translate-y-2 group-[.active]:rotate-45"
       ></span>
       <span
-        class="block w-full h-0.5 bg-current transition-transform duration-250 ease-in-out group-[.active]:opacity-0"
+        class="block h-0.5 w-full bg-current transition-transform duration-250 ease-in-out group-[.active]:opacity-0"
       ></span>
       <span
-        class="block w-full h-0.5 bg-current transition-transform duration-250 ease-in-out group-[.active]:-translate-y-2 group-[.active]:-rotate-45"
+        class="block h-0.5 w-full bg-current transition-transform duration-250 ease-in-out group-[.active]:-translate-y-2 group-[.active]:-rotate-45"
       ></span>
     </button>
   </nav>

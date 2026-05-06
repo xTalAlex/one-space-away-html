@@ -2,7 +2,8 @@ export const errors = {
   backHome: "GO TO HOMEPAGE",
   404: {
     title: "404 - Page Not Found",
-    description: "Sorry, the page you're looking for doesn't exist or has been moved.",
+    description:
+      "Sorry, the page you're looking for doesn't exist or has been moved.",
     message: "Oops! Page Not Found",
     text: "The page you're looking for might have been moved, deleted, or never existed.",
   },

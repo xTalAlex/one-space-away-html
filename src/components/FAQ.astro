@@ -5,39 +5,43 @@ import SectionHeader from "@components/ui/SectionHeader.astro";
 const faqItems = t.faq.items;
 ---
 
-<SectionWrapper id="faq" class="grid" containerClass="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 lg:gap-16 items-start">
-    <div class="md:sticky md:top-8 md:max-w-4/5">
-      <SectionHeader tag={t.faq.tag} title={t.faq.title} />
-    </div>
+<SectionWrapper
+  id="faq"
+  class="grid"
+  containerClass="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 lg:gap-16 items-start"
+>
+  <div class="md:sticky md:top-8 md:max-w-4/5">
+    <SectionHeader tag={t.faq.tag} title={t.faq.title} />
+  </div>
 
-    <div class="flex flex-col">
-      {
-        faqItems.map((item) => (
-          <div class="accordion-item border-b border-black">
-            <button class="accordion-button w-full flex justify-between items-center gap-4 py-5 bg-transparent border-none cursor-pointer text-left transition-all duration-300 hover:opacity-65">
-              <span class="text-xl transition-all duration-300 in-[.active]:font-medium">
-                {item.question}
-              </span>
-              <svg
-                class="w-5 h-5 shrink-0 transition-transform duration-300 in-[.active]:rotate-45"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M12 5v14M5 12h14" />
-              </svg>
-            </button>
-            <div class="accordion-content h-0 overflow-hidden transition-[height] duration-300">
-              <div class="pb-3 opacity-0 translate-y-2.5 transition-all duration-300 in-[.active]:opacity-100 in-[.active]:translate-y-0">
-                <p>{item.answer}</p>
-              </div>
+  <div class="flex flex-col">
+    {
+      faqItems.map((item) => (
+        <div class="accordion-item border-b border-black">
+          <button class="accordion-button flex w-full cursor-pointer items-center justify-between gap-4 border-none bg-transparent py-5 text-left transition-all duration-300 hover:opacity-65">
+            <span class="text-xl transition-all duration-300 in-[.active]:font-medium">
+              {item.question}
+            </span>
+            <svg
+              class="h-5 w-5 shrink-0 transition-transform duration-300 in-[.active]:rotate-45"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+          </button>
+          <div class="accordion-content h-0 overflow-hidden transition-[height] duration-300">
+            <div class="translate-y-2.5 pb-3 opacity-0 transition-all duration-300 in-[.active]:translate-y-0 in-[.active]:opacity-100">
+              <p>{item.answer}</p>
             </div>
           </div>
-        ))
-      }
-    </div>
+        </div>
+      ))
+    }
+  </div>
 </SectionWrapper>
 
 <script>

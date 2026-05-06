@@ -48,46 +48,46 @@ const projects = [
 ---
 
 <SectionWrapper id="portfolio">
-    <SectionHeader tag={t.portfolio.tag} title={t.portfolio.title} />
-    <BaseSwiper sliderName="portfolio" beforeAfter>
-      {
-        projects.map((project) => (
-          <div class="swiper-slide">
-            <div class="project-image relative min-h-100 overflow-hidden">
-              <Image
-                class="image before absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 [&.active]:opacity-100"
-                src={project.images.before.src}
-                alt={project.images.before.alt}
-                width={800}
-                aria-hidden="true"
-              />
-              <Image
-                class="image after active absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 [&.active]:opacity-100"
-                src={project.images.after.src}
-                alt={project.images.after.alt}
-                width={1144}
-                height={800}
-                aria-hidden="false"
-              />
+  <SectionHeader tag={t.portfolio.tag} title={t.portfolio.title} />
+  <BaseSwiper sliderName="portfolio" beforeAfter>
+    {
+      projects.map((project) => (
+        <div class="swiper-slide">
+          <div class="project-image relative min-h-100 overflow-hidden">
+            <Image
+              class="image before absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 [&.active]:opacity-100"
+              src={project.images.before.src}
+              alt={project.images.before.alt}
+              width={800}
+              aria-hidden="true"
+            />
+            <Image
+              class="image after active absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 [&.active]:opacity-100"
+              src={project.images.after.src}
+              alt={project.images.after.alt}
+              width={1144}
+              height={800}
+              aria-hidden="false"
+            />
+          </div>
+          <div class="project-info flex flex-col justify-center gap-8">
+            <div class="flex flex-col gap-4">
+              <h3 class="mb-0 text-xl font-semibold">
+                {project.info.challenge.title}
+              </h3>
+              <p>{project.info.challenge.text}</p>
             </div>
-            <div class="project-info flex flex-col justify-center gap-8">
-              <div class="flex flex-col gap-4">
-                <h3 class="text-xl font-semibold mb-0">
-                  {project.info.challenge.title}
-                </h3>
-                <p>{project.info.challenge.text}</p>
-              </div>
-              <div class="flex flex-col gap-4">
-                <h3 class="text-xl font-semibold mb-0">
-                  {project.info.result.title}
-                </h3>
-                <p>{project.info.result.text}</p>
-              </div>
+            <div class="flex flex-col gap-4">
+              <h3 class="mb-0 text-xl font-semibold">
+                {project.info.result.title}
+              </h3>
+              <p>{project.info.result.text}</p>
             </div>
           </div>
-        ))
-      }
-    </BaseSwiper>
+        </div>
+      ))
+    }
+  </BaseSwiper>
 </SectionWrapper>
 
 <script>

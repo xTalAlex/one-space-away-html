@@ -1,7 +1,8 @@
 export const home = {
   hero: {
     title: "La casa, esattamente come la vuoi.",
-    subtitle: "Scopri la gioia di vivere in uno spazio che senti veramente tuo.",
+    subtitle:
+      "Scopri la gioia di vivere in uno spazio che senti veramente tuo.",
     cta: {
       start: "INIZIA LA TRASFORMAZIONE",
       howItWorks: "Come Funziona?",
@@ -15,8 +16,10 @@ export const home = {
     projects: [
       {
         images: {
-          before: "Spazio non finito, in ristrutturazione con attrezzi da cantiere, cavi scoperti e piastrelle in marmo parzialmente installate.",
-          after: "Uno spazio abitativo moderno e open-space con un tavolo in legno, sedie e una scala in metallo. La stanza è illuminata da luci a soffitto e luce naturale proveniente da ampie finestre.",
+          before:
+            "Spazio non finito, in ristrutturazione con attrezzi da cantiere, cavi scoperti e piastrelle in marmo parzialmente installate.",
+          after:
+            "Uno spazio abitativo moderno e open-space con un tavolo in legno, sedie e una scala in metallo. La stanza è illuminata da luci a soffitto e luce naturale proveniente da ampie finestre.",
         },
         challenge: {
           title: "La Sfida del Cliente",
@@ -29,8 +32,10 @@ export const home = {
       },
       {
         images: {
-          before: "Una cucina datata con mobili bianchi, pavimento in piastrelle beige e elettrodomestici bianchi.",
-          after: "Una cucina moderna con mobili in legno scuro, elettrodomestici in acciaio inox e un rivestimento in pietra.",
+          before:
+            "Una cucina datata con mobili bianchi, pavimento in piastrelle beige e elettrodomestici bianchi.",
+          after:
+            "Una cucina moderna con mobili in legno scuro, elettrodomestici in acciaio inox e un rivestimento in pietra.",
         },
         challenge: {
           title: "La Sfida del Cliente",
@@ -48,10 +53,12 @@ export const home = {
     title: "Case vere, storie vere.",
     items: [
       {
-        content: "Lavorare con One Space Away ha trasformato non solo la nostra casa, ma il modo in cui la viviamo. La loro attenzione ai dettagli e la comprensione delle nostre esigenze sono state eccezionali.",
+        content:
+          "Lavorare con One Space Away ha trasformato non solo la nostra casa, ma il modo in cui la viviamo. La loro attenzione ai dettagli e la comprensione delle nostre esigenze sono state eccezionali.",
       },
       {
-        content: "Avevo un'idea generale di quello che volevo ma non ero sicura di come mettere tutto insieme. Mi hanno aiutata a perfezionare la mia visione e hanno creato uno spazio che sembra naturale e perfettamente mio.",
+        content:
+          "Avevo un'idea generale di quello che volevo ma non ero sicura di come mettere tutto insieme. Mi hanno aiutata a perfezionare la mia visione e hanno creato uno spazio che sembra naturale e perfettamente mio.",
       },
     ],
   },
@@ -61,17 +68,20 @@ export const home = {
     steps: [
       {
         title: "Connettiti",
-        description: "Inizia con una consulenza in cui condividi il tuo stile, le tue esigenze e la tua visione. Ascoltiamo, facciamo le domande giuste e capiamo cosa fa davvero sentire uno spazio come casa per te.",
+        description:
+          "Inizia con una consulenza in cui condividi il tuo stile, le tue esigenze e la tua visione. Ascoltiamo, facciamo le domande giuste e capiamo cosa fa davvero sentire uno spazio come casa per te.",
         imageAlt: "Persone che parlano di un progetto di interior design",
       },
       {
         title: "Progetta",
-        description: "Utilizzando i tuoi input, creiamo un piano di design personalizzato con mood board, rendering 3D e layout dettagliati, in modo che tu possa visualizzare il tuo spazio prima che inizi la trasformazione.",
+        description:
+          "Utilizzando i tuoi input, creiamo un piano di design personalizzato con mood board, rendering 3D e layout dettagliati, in modo che tu possa visualizzare il tuo spazio prima che inizi la trasformazione.",
         imageAlt: "Layout dettagliati di ingresso e bagno",
       },
       {
         title: "Trasforma",
-        description: "Guarda il tuo spazio prendere vita mentre il nostro team trasforma il design in realtà con maestria artigianale, esecuzione attenta e occhio per i dettagli.",
+        description:
+          "Guarda il tuo spazio prendere vita mentre il nostro team trasforma il design in realtà con maestria artigianale, esecuzione attenta e occhio per i dettagli.",
         imageAlt: "Esperto che misura le distanze",
       },
     ],
@@ -97,43 +107,55 @@ export const home = {
     items: [
       {
         question: "Quali servizi offrite?",
-        answer: "Forniamo soluzioni di interior design end-to-end: dalla consulenza iniziale ai piani di progettazione personalizzati (inclusi moodboard e rendering 3D) fino a trasformazioni complete con sapiente maestria.",
+        answer:
+          "Forniamo soluzioni di interior design end-to-end: dalla consulenza iniziale ai piani di progettazione personalizzati (inclusi moodboard e rendering 3D) fino a trasformazioni complete con sapiente maestria.",
       },
       {
         question: "Come funziona il processo di consulenza?",
-        answer: "Tutto inizia con una conversazione amichevole. Ci sediamo (o facciamo una videochiamata) per parlare del tuo stile, di come usi il tuo spazio e di cosa ti fa sentire a casa. Il nostro obiettivo è conoscerti davvero per creare un design che sia totalmente tuo.",
+        answer:
+          "Tutto inizia con una conversazione amichevole. Ci sediamo (o facciamo una videochiamata) per parlare del tuo stile, di come usi il tuo spazio e di cosa ti fa sentire a casa. Il nostro obiettivo è conoscerti davvero per creare un design che sia totalmente tuo.",
       },
       {
-        question: "Posso vedere come apparirà il mio design prima dell'inizio dei lavori?",
-        answer: "Assolutamente! Dopo aver discusso delle tue aspettative, elaboriamo un piano di progettazione completo di mood board, layout e rendering 3D. In questo modo potrai vedere esattamente come prendono forma le tue idee prima di iniziare.",
+        question:
+          "Posso vedere come apparirà il mio design prima dell'inizio dei lavori?",
+        answer:
+          "Assolutamente! Dopo aver discusso delle tue aspettative, elaboriamo un piano di progettazione completo di mood board, layout e rendering 3D. In questo modo potrai vedere esattamente come prendono forma le tue idee prima di iniziare.",
       },
       {
         question: "Qual è la tempistica tipica di un progetto?",
-        answer: "Ogni progetto è diverso. Dopo aver definito il piano di progettazione, lavoreremo insieme per stabilire una tempistica realistica adatta alle tue esigenze. Ti terremo informato dall'inizio alla fine, assicurandoci che il processo sia fluido e senza stress.",
+        answer:
+          "Ogni progetto è diverso. Dopo aver definito il piano di progettazione, lavoreremo insieme per stabilire una tempistica realistica adatta alle tue esigenze. Ti terremo informato dall'inizio alla fine, assicurandoci che il processo sia fluido e senza stress.",
       },
       {
         question: "Come lavorate con budget diversi?",
-        answer: "Crediamo che il grande design debba essere alla portata di tutti. Fin da subito parleremo del tuo budget per trovare modi creativi ed efficienti di realizzare la tua idea senza rinunciare allo stile o alla qualità.",
+        answer:
+          "Crediamo che il grande design debba essere alla portata di tutti. Fin da subito parleremo del tuo budget per trovare modi creativi ed efficienti di realizzare la tua idea senza rinunciare allo stile o alla qualità.",
       },
       {
         question: "Posso includere i miei mobili o elementi d'arredo attuali?",
-        answer: "Certo! Amiamo aggiungere tocchi personali che rendano il tuo spazio unico. Che tu stia introducendo pezzi preferiti o lavorando con la disposizione attuale, uniremo tutto in modo impeccabile.",
+        answer:
+          "Certo! Amiamo aggiungere tocchi personali che rendano il tuo spazio unico. Che tu stia introducendo pezzi preferiti o lavorando con la disposizione attuale, uniremo tutto in modo impeccabile.",
       },
       {
         question: "Come vi assicurate che il mio stile personale emerga?",
-        answer: "Il tuo stile fa da guida. Iniziamo ascoltando attentamente le tue idee per poi personalizzare ogni dettaglio — dai materiali che scegliamo al layout finale — affinché il tuo spazio rispecchi al meglio te stesso.",
+        answer:
+          "Il tuo stile fa da guida. Iniziamo ascoltando attentamente le tue idee per poi personalizzare ogni dettaglio — dai materiali che scegliamo al layout finale — affinché il tuo spazio rispecchi al meglio te stesso.",
       },
       {
-        question: "Cosa succede se ho nuove idee o voglio cambiare qualcosa in corso d'opera?",
-        answer: "Nessun problema, capita a tutti di cambiare idea. Il nostro processo è fatto su misura e flessibile per poter fare modiche lungo il percorso ed assicurarci di adattare gli spazi alla tua visione.",
+        question:
+          "Cosa succede se ho nuove idee o voglio cambiare qualcosa in corso d'opera?",
+        answer:
+          "Nessun problema, capita a tutti di cambiare idea. Il nostro processo è fatto su misura e flessibile per poter fare modiche lungo il percorso ed assicurarci di adattare gli spazi alla tua visione.",
       },
       {
         question: "Offrite consulenze virtuali?",
-        answer: "Certo! Offriamo sia consulenze di persona che virtuali in modo da rendere l'incontro e la comunicazione conveniente per te, ovunque ti trovi.",
+        answer:
+          "Certo! Offriamo sia consulenze di persona che virtuali in modo da rendere l'incontro e la comunicazione conveniente per te, ovunque ti trovi.",
       },
       {
         question: "Come posso iniziare?",
-        answer: "Semplice, chiamaci o inviaci un'email. Fisseremo la nostra prima consulenza, valuteremo le tue idee e inizieremo il percorso verso uno spazio che soddisfi a pieno le tue aspettative.",
+        answer:
+          "Semplice, chiamaci o inviaci un'email. Fisseremo la nostra prima consulenza, valuteremo le tue idee e inizieremo il percorso verso uno spazio che soddisfi a pieno le tue aspettative.",
       },
     ],
   },
@@ -151,9 +173,11 @@ export const home = {
       projectPlaceholder: "Parlaci un pó del tuo progetto",
       submit: "INVIA MESSAGGIO",
       sending: "Invio...",
-      disclaimer: "Tutti i campi sono obbligatori. Inviando il modulo accetti i {terms} e la {privacy}.",
+      disclaimer:
+        "Tutti i campi sono obbligatori. Inviando il modulo accetti i {terms} e la {privacy}.",
       successTitle: "Inviato",
-      successText: "Il tuo messaggio è stato inviato con successo. Ti risponderemo a breve.",
+      successText:
+        "Il tuo messaggio è stato inviato con successo. Ti risponderemo a breve.",
       errorTitle: "Errore",
       errorText: "Invio del messaggio fallito. Riprova più tardi.",
     },

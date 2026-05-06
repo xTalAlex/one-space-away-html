@@ -91,7 +91,11 @@ const schemaData = {
     }
 
     <!-- Google JSON-LD Structured data -->
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(schemaData)}
+    />
 
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
@@ -108,7 +112,7 @@ const schemaData = {
   <body class="text-base">
     <a
       href="#main"
-      class="absolute top-2.5 left-2 translate-y-[-200%] py-3 px-4 rounded-md text-white bg-black opacity-0 transition-opacity duration-200 ease-in-out focus-visible:opacity-100 focus-visible:translate-y-0 focus-visible:z-100 focus-visible:outline"
+      class="absolute top-2.5 left-2 translate-y-[-200%] rounded-md bg-black px-4 py-3 text-white opacity-0 transition-opacity duration-200 ease-in-out focus-visible:z-100 focus-visible:translate-y-0 focus-visible:opacity-100 focus-visible:outline"
       >{t.skipToContent}</a
     >
 

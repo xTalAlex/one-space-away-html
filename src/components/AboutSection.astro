@@ -8,22 +8,22 @@ import SectionWrapper from "@components/ui/SectionWrapper.astro";
 
 <SectionWrapper id="about">
   <SectionHeader tag={t.about.tag} title={t.about.title} />
-  <div class="grid grid-cols-1 gap-8 items-center md:grid-cols-2 lg:gap-16">
+  <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-2 lg:gap-16">
     <div
-      class="w-full h-full min-h-88 overflow-hidden aspect-4/3 -order-1 md:min-h-100 md:order-0 lg:min-h-112"
+      class="-order-1 aspect-4/3 h-full min-h-88 w-full overflow-hidden md:order-0 md:min-h-100 lg:min-h-112"
     >
       <Image
         src={twoWomenSittingImage}
         alt={t.about.imageAlt}
-        class="w-full h-full object-cover"
+        class="h-full w-full object-cover"
       />
     </div>
     <div class="lg:max-w-150">
       {
         t.about.items.map((content) => (
           <>
-            <h3 class="text-xl font-semibold mb-4">{content.title}</h3>
-            <p class="leading-relaxed opacity-80 mb-8 last:mb-0">
+            <h3 class="mb-4 text-xl font-semibold">{content.title}</h3>
+            <p class="mb-8 leading-relaxed opacity-80 last:mb-0">
               {content.text}
             </p>
           </>

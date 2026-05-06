@@ -22,11 +22,11 @@ const {
   <!-- Before/After Toggle -->
   {
     beforeAfter && (
-      <div class="flex gap-4 md:px-16 mb-8 px-0">
+      <div class="mb-8 flex gap-4 px-0 md:px-16">
         <button
           class:list={[
-            "toggle-btn text-xl font-medium cursor-pointer opacity-55 relative pb-0.5 transition-opacity duration-300 [&.active]:opacity-100 hover:opacity-100",
-            "after:content-[''] after:block after:absolute after:left-0 after:-bottom-px after:w-full after:h-0.5 after:bg-current after:scale-x-0 after:origin-right after:transition-transform after:duration-250 after:ease-out [&.active]:after:scale-x-100 [&.active]:after:origin-left hover:after:scale-x-100 hover:after:origin-left",
+            "toggle-btn relative cursor-pointer pb-0.5 text-xl font-medium opacity-55 transition-opacity duration-300 hover:opacity-100 [&.active]:opacity-100",
+            "after:absolute after:-bottom-px after:left-0 after:block after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-250 after:ease-out after:content-[''] hover:after:origin-left hover:after:scale-x-100 [&.active]:after:origin-left [&.active]:after:scale-x-100",
           ]}
           data-view="before"
         >
@@ -34,8 +34,8 @@ const {
         </button>
         <button
           class:list={[
-            "toggle-btn active text-xl font-medium cursor-pointer opacity-55 relative pb-0.5 transition-opacity duration-300 [&.active]:opacity-100 hover:opacity-100",
-            "after:content-[''] after:block after:absolute after:left-0 after:-bottom-px after:w-full after:h-0.5 after:bg-current after:scale-x-0 after:origin-right after:transition-transform after:duration-250 after:ease-out [&.active]:after:scale-x-100 [&.active]:after:origin-left hover:after:scale-x-100 hover:after:origin-left",
+            "toggle-btn active relative cursor-pointer pb-0.5 text-xl font-medium opacity-55 transition-opacity duration-300 hover:opacity-100 [&.active]:opacity-100",
+            "after:absolute after:-bottom-px after:left-0 after:block after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-250 after:ease-out after:content-[''] hover:after:origin-left hover:after:scale-x-100 [&.active]:after:origin-left [&.active]:after:scale-x-100",
           ]}
           data-view="after"
         >
@@ -54,10 +54,10 @@ const {
     {
       navigation && (
         <>
-          <div class="absolute top-1/2 -translate-y-1/2 left-0 w-12 h-12 rounded-full overflow-hidden hidden md:flex items-center justify-center shadow-lg z-10">
+          <div class="absolute top-1/2 left-0 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full shadow-lg md:flex">
             <ButtonPrimary
               compact
-              class={`nav-btn w-full h-full ${sliderName}-prev`}
+              class={`nav-btn h-full w-full ${sliderName}-prev`}
               aria-label="Previous"
             >
               <svg
@@ -66,16 +66,16 @@ const {
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                class="w-6 h-6"
+                class="h-6 w-6"
               >
                 <path d="M15 18l-6-6 6-6" />
               </svg>
             </ButtonPrimary>
           </div>
-          <div class="absolute top-1/2 -translate-y-1/2 right-0 w-12 h-12 rounded-full overflow-hidden hidden md:flex items-center justify-center shadow-lg z-10">
+          <div class="absolute top-1/2 right-0 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full shadow-lg md:flex">
             <ButtonPrimary
               compact
-              class={`nav-btn w-full h-full ${sliderName}-next`}
+              class={`nav-btn h-full w-full ${sliderName}-next`}
               aria-label="Next"
             >
               <svg
@@ -84,7 +84,7 @@ const {
                 fill="none"
                 stroke="currentColor"
                 stroke-width="2"
-                class="w-6 h-6"
+                class="h-6 w-6"
               >
                 <path d="M9 18l6-6-6-6" />
               </svg>

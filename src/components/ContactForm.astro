@@ -21,12 +21,12 @@ const disclaimerParts = t.contact.form.disclaimer.split(
 ---
 
 <form id="contact-form" class="lg:mr-12" action="">
-  <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-10">
+  <div class="mb-10 grid grid-cols-1 gap-6 xl:grid-cols-2">
     <div class="grid gap-2">
       <label class="text-lg font-medium" for="name">{t.contact.form.name}</label
       >
       <input
-        class="text-base py-4 px-5 shadow-none border border-black/20 transition-all duration-200 ease-out focus:text-black focus:border-black/70 focus:shadow-sm focus:outline-none hover:border-black/40"
+        class="border border-black/20 px-5 py-4 text-base shadow-none transition-all duration-200 ease-out hover:border-black/40 focus:border-black/70 focus:text-black focus:shadow-sm focus:outline-none"
         id="name"
         type="text"
         placeholder={t.contact.form.namePlaceholder}
@@ -38,19 +38,19 @@ const disclaimerParts = t.contact.form.disclaimer.split(
         >{t.contact.form.email}</label
       >
       <input
-        class="text-base py-4 px-5 shadow-none border border-black/20 transition-all duration-200 ease-out focus:text-black focus:border-black/70 focus:shadow-sm focus:outline-none hover:border-black/40"
+        class="border border-black/20 px-5 py-4 text-base shadow-none transition-all duration-200 ease-out hover:border-black/40 focus:border-black/70 focus:text-black focus:shadow-sm focus:outline-none"
         id="email"
         type="email"
         placeholder={t.contact.form.emailPlaceholder}
         required
       />
     </div>
-    <div class="grid gap-2 col-span-full">
+    <div class="col-span-full grid gap-2">
       <label class="text-lg font-medium" for="message"
         >{t.contact.form.project}</label
       >
       <textarea
-        class="text-base py-4 px-5 shadow-none border border-black/20 transition-all duration-200 ease-out focus:text-black focus:border-black/70 focus:shadow-sm focus:outline-none hover:border-black/40"
+        class="border border-black/20 px-5 py-4 text-base shadow-none transition-all duration-200 ease-out hover:border-black/40 focus:border-black/70 focus:text-black focus:shadow-sm focus:outline-none"
         id="message"
         placeholder={t.contact.form.projectPlaceholder}
         rows="4"
@@ -61,7 +61,7 @@ const disclaimerParts = t.contact.form.disclaimer.split(
     class="flex flex-col items-start gap-4 xl:flex-row xl:items-center xl:justify-between"
   >
     <ButtonPrimary>{t.contact.form.submit}</ButtonPrimary>
-    <div class="text-xs max-w-75">
+    <div class="max-w-75 text-xs">
       <span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ const disclaimerParts = t.contact.form.disclaimer.split(
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          class="inline w-4 mb-0.5 stroke-2"
+          class="mb-0.5 inline w-4 stroke-2"
           stroke-linecap="round"
           stroke-linejoin="round"
           ><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"
@@ -91,7 +91,7 @@ const disclaimerParts = t.contact.form.disclaimer.split(
       </span>
     </div>
   </div>
-  <div id="form-feedback" class="mt-6 text-green-800 font-medium" hidden>
+  <div id="form-feedback" class="mt-6 font-medium text-green-800" hidden>
     <p>{t.contact.form.successText}</p>
   </div>
 </form>

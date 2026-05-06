@@ -14,14 +14,14 @@ const error = t.errors[errorCode];
 <BaseLayout title={error.title} description={error.description}>
   <section
     id="error"
-    class="min-h-screen pt-8 pb-5 md:pt-12 md:pb-8 lg:pt-28 lg:pb-14 flex items-center justify-center"
+    class="flex min-h-screen items-center justify-center pt-8 pb-5 md:pt-12 md:pb-8 lg:pt-28 lg:pb-14"
   >
-    <div class="w-full flex flex-col items-center text-center max-w-xl">
-      <h1 class="text-6xl lg:text-7xl font-bold mb-6">{errorCode}</h1>
-      <p class="leading-relaxed text-2xl font-medium mb-4">
+    <div class="flex w-full max-w-xl flex-col items-center text-center">
+      <h1 class="mb-6 text-6xl font-bold lg:text-7xl">{errorCode}</h1>
+      <p class="mb-4 text-2xl leading-relaxed font-medium">
         {error.message}
       </p>
-      <p class="leading-relaxed opacity-80 text-lg mb-8">{error.text}</p>
+      <p class="mb-8 text-lg leading-relaxed opacity-80">{error.text}</p>
       <ButtonPrimary href="/" class="inline-block"
         >{t.errors.backHome}</ButtonPrimary
       >

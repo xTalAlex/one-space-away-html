@@ -1,4 +1,4 @@
-import type socialIcons from '@assets/socialIcons';
+import type socialIcons from "@assets/socialIcons";
 
 export type Site = {
   COMPANY_NAME: string;
@@ -14,7 +14,7 @@ export type Site = {
 
   TWITTER?: {
     CREATOR?: string; // twitter handle
-    CARD?: 'summary' | 'summary_large_image' | 'app' | 'player';
+    CARD?: "summary" | "summary_large_image" | "app" | "player";
   };
 };
 

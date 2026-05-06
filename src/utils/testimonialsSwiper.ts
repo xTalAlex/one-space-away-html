@@ -31,31 +31,29 @@ export function initTestimonialsSlider() {
     },
   });
 
-  document
-    .querySelectorAll(".testimonial-video-wrapper")
-    .forEach((wrapper) => {
-      const video = wrapper.querySelector(
-        ".testimonial-video",
-      ) as HTMLVideoElement | null;
-      const control = wrapper.querySelector(".video-control");
+  document.querySelectorAll(".testimonial-video-wrapper").forEach((wrapper) => {
+    const video = wrapper.querySelector(
+      ".testimonial-video",
+    ) as HTMLVideoElement | null;
+    const control = wrapper.querySelector(".video-control");
 
-      if (!video || !control) return;
+    if (!video || !control) return;
 
-      const updatePlayingState = () => {
-        control.classList.toggle("playing", !video.paused);
-        wrapper.classList.toggle("playing", !video.paused);
-      };
+    const updatePlayingState = () => {
+      control.classList.toggle("playing", !video.paused);
+      wrapper.classList.toggle("playing", !video.paused);
+    };
 
-      const toggleVideo = () => {
-        video.paused ? video.play() : video.pause();
-        updatePlayingState();
-      };
+    const toggleVideo = () => {
+      video.paused ? video.play() : video.pause();
+      updatePlayingState();
+    };
 
-      control.addEventListener("click", toggleVideo);
-      video.addEventListener("play", updatePlayingState);
-      video.addEventListener("pause", updatePlayingState);
-      video.addEventListener("ended", updatePlayingState);
-    });
+    control.addEventListener("click", toggleVideo);
+    video.addEventListener("play", updatePlayingState);
+    video.addEventListener("pause", updatePlayingState);
+    video.addEventListener("ended", updatePlayingState);
+  });
 
   return () => {
     testimonialsSwiper.destroy();
