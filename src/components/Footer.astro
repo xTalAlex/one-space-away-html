@@ -1,8 +1,8 @@
 ---
 import { SITE, SOCIALS } from "@consts";
-import socialIcons from "@src/assets/socialIcons";
 import ContainerDiv from "@src/components/ui/ContainerDiv.astro";
 import { t } from "@src/i18n";
+import { Icon } from "astro-icon/components";
 
 const currentYear = new Date().getFullYear();
 ---
@@ -112,7 +112,7 @@ const currentYear = new Date().getFullYear();
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Fragment set:html={socialIcons[social.ICON]} />
+                    <Icon name={social.ICON} class="h-4 w-4" />
                     {social.NAME}
                   </a>
                 </li>

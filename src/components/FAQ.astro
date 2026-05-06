@@ -1,8 +1,8 @@
 ---
 import SectionHeader from "@src/components/ui/SectionHeader.astro";
 import SectionWrapper from "@src/components/ui/SectionWrapper.astro";
-import { Icon } from "astro-icon/components";
 import { t } from "@src/i18n";
+import { Icon } from "astro-icon/components";
 
 const faqItems = t.faq.items;
 ---
@@ -24,7 +24,7 @@ const faqItems = t.faq.items;
             type="button"
             class="accordion-button flex w-full cursor-pointer items-center justify-between gap-4 border-none bg-transparent py-5 text-left transition-all duration-300 hover:opacity-65"
           >
-            <span class="text-xl transition-all duration-300 in-[.active]:font-medium">
+            <span class="text-lg transition-all duration-300 in-[.active]:font-medium">
               {item.question}
             </span>
             <Icon
@@ -34,7 +34,7 @@ const faqItems = t.faq.items;
           </button>
           <div class="accordion-content h-0 overflow-hidden transition-[height] duration-300">
             <div class="translate-y-2.5 pb-3 opacity-0 transition-all duration-300 in-[.active]:translate-y-0 in-[.active]:opacity-100">
-              <p>{item.answer}</p>
+              <p class="">{item.answer}</p>
             </div>
           </div>
         </div>

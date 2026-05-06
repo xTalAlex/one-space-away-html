@@ -1,5 +1,3 @@
-import type socialIcons from "@src/assets/socialIcons";
-
 export type Site = {
   COMPANY_NAME: string;
   LEGAL_NAME: string;
@@ -20,7 +18,7 @@ export type Site = {
 
 export type Socials = {
   NAME: string;
-  ICON: keyof typeof socialIcons;
+  ICON: string;
   LABEL: string;
   HREF: string;
 }[];

@@ -24,25 +24,25 @@ export const SITE: Site = {
 export const SOCIALS: Socials = [
   {
     NAME: "Instagram",
-    ICON: "instagram",
+    ICON: "logos:instagram-icon",
     LABEL: `${SITE.COMPANY_NAME} on Instagram`,
     HREF: "https://www.instagram.com/",
   },
   {
     NAME: "Facebook",
-    ICON: "facebook",
+    ICON: "logos:facebook",
     LABEL: `${SITE.COMPANY_NAME} on Facebook`,
     HREF: "https://www.facebook.com/",
   },
   {
     NAME: "Pinterest",
-    ICON: "pinterest",
+    ICON: "logos:pinterest",
     LABEL: `${SITE.COMPANY_NAME} on Pinterest`,
     HREF: "https://www.pinterest.com/",
   },
   {
     NAME: "Youtube",
-    ICON: "youtube",
+    ICON: "logos:youtube-icon",
     LABEL: `${SITE.COMPANY_NAME} on YouTube`,
     HREF: "https://www.youtube.com/",
   },
