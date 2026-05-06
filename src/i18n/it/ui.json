@@ -1,0 +1,31 @@
+{
+  "skipToContent": "Vai al contenuto",
+  "header": {
+    "logo": "One Space Away",
+    "nav": {
+      "home": "Home",
+      "portfolio": "Portfolio",
+      "howItWorks": "Come Funziona",
+      "about": "Chi Siamo",
+      "contact": "Contatti"
+    },
+    "cta": "Lavoriamo insieme"
+  },
+  "footer": {
+    "company": "Azienda",
+    "socialMedia": "Social Media",
+    "legal": "Legale e Stampa",
+    "phoneLabel": "T.",
+    "emailLabel": "E.",
+    "copyright": "Tutti i diritti riservati.",
+    "location": "Con sede a Beverly Hills, California.",
+    "links": {
+      "privacyPolicy": "Informativa sulla Privacy",
+      "termsConditions": "Termini & Condizioni",
+      "sitemap": "Mappa del Sito"
+    }
+  },
+  "legal": {
+    "effectiveDate": "Data di entrata in vigore:"
+  }
+}

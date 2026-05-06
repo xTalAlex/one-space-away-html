@@ -1,7 +1,7 @@
 ---
 import "@src/styles/global.css";
 
-import { SITE, SOCIALS } from "@consts";
+import { CONFIG, SOCIALS } from "@consts";
 import Footer from "@src/components/Footer.astro";
 import Header from "@src/components/Header.astro";
 import { t } from "@src/i18n";
@@ -10,17 +10,17 @@ import { ClientRouter } from "astro:transitions";
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 const {
-  companyName = SITE.COMPANY_NAME,
-  legalName = SITE.LEGAL_NAME,
-  title = `${SITE.COMPANY_NAME}: ${SITE.TITLE}`,
-  description = SITE.DESCRIPTION,
+  companyName = CONFIG.company_name,
+  legalName = CONFIG.legal_name,
+  title = `${CONFIG.company_name}: ${CONFIG.title}`,
+  description = CONFIG.description,
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
-  ogImage = SITE.OG_IMAGE,
-  twitterHandle = SITE.TWITTER?.CREATOR,
+  ogImage = CONFIG.og_image,
+  twitterHandle = CONFIG.twitter?.creator,
 } = Astro.props;
 
 const socialImageURL = new URL(
-  ogImage ?? SITE.OG_IMAGE ?? "og-image.webp",
+  ogImage ?? CONFIG.og_image ?? "og-image.webp",
   Astro.url.origin,
 ).href;
 
@@ -40,14 +40,14 @@ const schemaData = {
       legalName: legalName,
       url: `${canonicalURL}`,
       "@id": `${canonicalURL}`,
-      sameAs: SOCIALS.map((social) => social.HREF),
+      sameAs: SOCIALS.map((social) => social.href),
     },
   },
 };
 ---
 
 <!doctype html>
-<html lang={`${SITE.LOCALE ?? "en"}`} class="scroll-smooth">
+<html lang={`${CONFIG.locale ?? "en"}`} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -79,7 +79,7 @@ const schemaData = {
     <meta property="og:image" content={socialImageURL} />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content={SITE.TWITTER?.CARD} />
+    <meta property="twitter:card" content={CONFIG.twitter?.card} />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />

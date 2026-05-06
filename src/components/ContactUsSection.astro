@@ -1,5 +1,5 @@
 ---
-import { SITE } from "@consts";
+import { CONFIG } from "@consts";
 import ContactForm from "@src/components/ContactForm.astro";
 import SectionHeader from "@src/components/ui/SectionHeader.astro";
 import SectionWrapper from "@src/components/ui/SectionWrapper.astro";
@@ -37,14 +37,14 @@ import { Icon } from "astro-icon/components";
         <h3 class="mb-3 text-xl font-medium">{t.contact.hello}</h3>
         <div>
           <a
-            href={`mailto:${SITE.EMAIL}`}
+            href={`mailto:${CONFIG.email}`}
             class="mb-1.5 block text-base opacity-80 transition-opacity duration-200 ease-out hover:opacity-100 active:opacity-100"
-            >{SITE.EMAIL}</a
+            >{CONFIG.email}</a
           >
           <a
-            href={`tel:${SITE.TELEPHONE}`}
+            href={`tel:${CONFIG.telephone}`}
             class="block text-base opacity-80 transition-opacity duration-200 ease-out hover:opacity-100 active:opacity-100"
-            >{SITE.TELEPHONE}</a
+            >{CONFIG.telephone}</a
           >
         </div>
       </div>
@@ -64,7 +64,7 @@ import { Icon } from "astro-icon/components";
         <h3 class="mb-3 text-xl font-medium">{t.contact.location}</h3>
         <a
           class="block text-base opacity-80 transition-opacity duration-200 ease-out hover:opacity-100 active:opacity-100"
-          href={`https://maps.google.com/?q=${SITE.ADDRESS}`}>{SITE.ADDRESS}</a
+          href={`https://maps.google.com/?q=${CONFIG.address}`}>{CONFIG.address}</a
         >
       </div>
     </address>

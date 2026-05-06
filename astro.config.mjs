@@ -4,11 +4,11 @@ import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
-import { SITE } from "./src/consts";
+import { CONFIG } from "./src/consts";
 
 // https://astro.build/config
 export default defineConfig({
-  site: SITE.CANONICAL_URL,
+  site: CONFIG.canonical_url,
   output: "static",
 
   build: {

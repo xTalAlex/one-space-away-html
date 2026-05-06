@@ -1,12 +1,12 @@
 ---
-import { SITE } from "@consts";
+import { CONFIG } from "@consts";
 import { t } from "@src/i18n";
 import BaseLayout from "@src/layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const legal = await getCollection("legal");
-  const locale = SITE.LOCALE ?? "en";
+  const locale = CONFIG.locale ?? "en";
   return legal
     .filter((doc) => doc.id.startsWith(`${locale}/`))
     .map((doc) => ({

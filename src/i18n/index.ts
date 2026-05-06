@@ -1,4 +1,4 @@
-import { SITE } from "@consts";
+import { CONFIG } from "@consts";
 import type {
   namespaces as defaultNamespaces,
   en as DefaultTranslations,
@@ -14,7 +14,7 @@ type UnionToIntersection<U> = (
   : never;
 
 // Variables
-const locale = SITE.LOCALE ?? "en";
+const locale = CONFIG.locale ?? "en";
 
 const localeModules = import.meta.glob<{ [key: string]: unknown }>(
   "./**/index.ts",

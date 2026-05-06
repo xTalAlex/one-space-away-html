@@ -1,24 +1,24 @@
-export type Site = {
-  COMPANY_NAME: string;
-  LEGAL_NAME: string;
-  TITLE: string;
-  DESCRIPTION: string;
-  CANONICAL_URL: string;
-  LOCALE?: string; // default en
-  TELEPHONE: string;
-  EMAIL: string;
-  ADDRESS: string;
-  OG_IMAGE: string;
+export type Config = {
+  company_name: string;
+  legal_name: string;
+  title: string;
+  description: string;
+  canonical_url: string;
+  locale?: string; // default en
+  telephone: string;
+  email: string;
+  address: string;
+  og_image: string;
 
-  TWITTER?: {
-    CREATOR?: string; // twitter handle
-    CARD?: "summary" | "summary_large_image" | "app" | "player";
+  twitter?: {
+    creator?: string; // twitter handle
+    card?: "summary" | "summary_large_image" | "app" | "player";
   };
 };
 
-export type Socials = {
-  NAME: string;
-  ICON: string;
-  LABEL: string;
-  HREF: string;
-}[];
+export type Social = {
+  name: string;
+  icon: string;
+  label: string;
+  href: string;
+};

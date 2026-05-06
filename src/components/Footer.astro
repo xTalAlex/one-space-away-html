@@ -1,5 +1,5 @@
 ---
-import { SITE, SOCIALS } from "@consts";
+import { CONFIG, SOCIALS } from "@consts";
 import ContainerDiv from "@src/components/ui/ContainerDiv.astro";
 import { t } from "@src/i18n";
 import { Icon } from "astro-icon/components";
@@ -17,7 +17,7 @@ const currentYear = new Date().getFullYear();
       <a
         href="/"
         class="mb-7 inline-block text-xl font-bold text-black transition-all duration-200 ease-out hover:text-black active:text-black"
-        aria-label={SITE.TITLE}
+        aria-label={CONFIG.title}
       >
         {t.header.logo}
       </a>
@@ -29,17 +29,17 @@ const currentYear = new Date().getFullYear();
         <p>
           <span>{t.footer.phoneLabel}</span>
           <a
-            href={`tel:${SITE.TELEPHONE}`}
+            href={`tel:${CONFIG.telephone}`}
             class="transition-all duration-200 ease-out hover:text-black active:text-black"
-            >{SITE.TELEPHONE}</a
+            >{CONFIG.telephone}</a
           >
         </p>
         <p>
           <span>{t.footer.emailLabel}</span>
           <a
-            href={`mailto:${SITE.EMAIL}`}
+            href={`mailto:${CONFIG.email}`}
             class="transition-all duration-200 ease-out hover:text-black active:text-black"
-            >{SITE.EMAIL}</a
+            >{CONFIG.email}</a
           >
         </p>
       </address>
@@ -106,14 +106,14 @@ const currentYear = new Date().getFullYear();
               <>
                 <li>
                   <a
-                    href={social.HREF}
-                    aria-label={social.LABEL}
+                    href={social.href}
+                    aria-label={social.label}
                     class="flex items-center gap-1.5 transition-all duration-200 ease-out hover:text-black active:text-black [&>svg]:h-4.5"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Icon name={social.ICON} class="h-4 w-4" />
-                    {social.NAME}
+                    <Icon name={social.icon} class="h-4 w-4" />
+                    {social.name}
                   </a>
                 </li>
               </>
@@ -159,7 +159,7 @@ const currentYear = new Date().getFullYear();
     class="flex flex-wrap justify-between gap-x-12 gap-y-1.5 font-medium sm:gap-12 lg:flex-nowrap lg:gap-0"
   >
     <div>
-      <p>&copy; {SITE.COMPANY_NAME} {currentYear}.</p>
+      <p>&copy; {CONFIG.company_name} {currentYear}.</p>
     </div>
     <div>
       <p>{t.footer.location}</p>
