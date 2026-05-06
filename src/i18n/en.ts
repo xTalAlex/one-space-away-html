@@ -79,6 +79,7 @@ export const en = {
   about: {
     tag: "OUR STORY",
     title: "Every home has a story.",
+    imageAlt: "Two women sitting and talking about interior design.",
     items: [
       {
         title: "Our Mission",

@@ -79,6 +79,7 @@ export const it = {
   about: {
     tag: "LA NOSTRA STORIA",
     title: "Ogni casa ha una storia.",
+    imageAlt: "Due donne sedute che parlano di interior design.",
     items: [
       {
         title: "La Nostra Missione",
