@@ -20,3 +20,32 @@
 .swiper-pagination-bullet-active {
   @apply bg-black scale-150;
 }
+
+/* Testimonials Swiper - slide transitions */
+.testimonials-swiper .swiper-wrapper {
+  @apply items-start;
+}
+
+.testimonials-swiper .swiper-slide {
+  @apply flex justify-center h-auto transition-all duration-300;
+}
+
+@media screen and (max-width: 48rem) {
+  .testimonials-swiper .swiper-slide {
+    @apply opacity-0 scale-75;
+  }
+
+  .testimonials-swiper .swiper-slide-active {
+    @apply opacity-100 scale-100;
+  }
+
+  .testimonials-swiper .swiper-slide-prev,
+  .testimonials-swiper .swiper-slide-next {
+    @apply opacity-0 scale-75;
+  }
+}
+
+/* Hide pagination when non-slider */
+.testimonials-swiper.-non-slider .swiper-pagination {
+  @apply hidden;
+}
