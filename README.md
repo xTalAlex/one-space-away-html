@@ -11,7 +11,7 @@
   - Pre-configured CSP (Content Security Policy) and security headers (optimized for Cloudflare, easily adaptable for Vercel or Netlify).
     <img width="1910" height="915" alt="HTTP Observatory" src="https://github.com/user-attachments/assets/4a38f8c3-c851-4239-a0b5-73f80fe8be57" />
 - Responsive: mobile, tablet, and desktop devices.
-- Stack: Astro (HTML, CSS, and JS) with minimal dependencies.
+- Stack: Astro (HTML, Tailwindcss, and JS) with minimal dependencies.
 
 ## Deployment
 
@@ -42,7 +42,7 @@ import consultationImage from '/src/assets/images/consultation.jpg';
 For top-tier loading speeds and high-resolution assets, you can easily swap to [Astro-Cloudinary](https://docs.astro.build/en/guides/media/cloudinary/).
 
 ```
-pnpm add astro-cloudinary
+npm add astro-cloudinary
 ```
 
 ```astro
@@ -58,36 +58,12 @@ import { CldImage } from 'astro-cloudinary';
 
 ## Fonts
 
-All local fonts are stored in `src/assets/fonts/`. To add or change fonts:
+This template uses [Modern Font Stacks](https://modernfontstacks.com/) — system font families organized by typeface classification. No web fonts are downloaded, resulting in zero layout shifts and instant text rendering.
 
-1. Drop your `.woff2` files into the fonts folder.
-2. Update the `astro.config.mjs` font provider:
+- **Sans-serif (body):** Geometric Humanist stack (`Avenir, Montserrat, Corbel, ...`)
 
-```mjs
-fonts: [
-    {
-      provider: fontProviders.local(),
-      name: "YourFontName",
-      cssVariable: "--font-custom",
-      options: {
-        variants: [{
-            src: ["./src/assets/fonts/YourFont.woff2"],
-            weight: "normal",
-            style: "normal",
-          }],
-      },
-    },
-  ],
-```
-
-3. Update the variable in `src/styles/_reset.css`:
-
-```css
-font-family: var(--font-custom), system-ui, sans-serif;
-```
-
-*For more info on using remote fonts (Google Fonts, etc.), check the [Astro Font Provider Reference](https://docs.astro.build/en/reference/font-provider-reference/).*
+Font stacks are configured in `src/styles/global.css` under `@theme`.
 
 ## Technical Details
 
-Carousels: Powered by **Swiper.js.** Initialization logic is in `utils/initSwiper.ts`.
+Carousels: Powered by **Swiper.js.** Initialization logic is in `utils/baseSwiper.ts`.

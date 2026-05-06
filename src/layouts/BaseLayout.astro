@@ -1,7 +1,6 @@
 ---
 import "@styles/global.css";
 
-import { Font } from "astro:assets";
 import { SITE, SOCIALS } from "@consts";
 import { ClientRouter } from "astro:transitions";
 import { t } from "../i18n";
@@ -61,8 +60,6 @@ const schemaData = {
       href="/hero-video-poster.webp"
       fetchpriority="high"
     />
-    <!-- Preload fonts -->
-    <Font cssVariable="--font-dm-sans" />
 
     <meta name="generator" content={Astro.generator} />
 
