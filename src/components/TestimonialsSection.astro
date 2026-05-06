@@ -83,13 +83,20 @@ const testimonials = [
               </>
             ) : (
               <div
+                id={`video-${testimonial.id}`}
+                x-data="{ playing: false }"
+                class="relative h-full w-full bg-black"
+                x-bind:class="{ 'before:opacity-0': playing }"
                 class:list={[
-                  "testimonial-video-wrapper relative h-full w-full bg-black [&.playing]:before:opacity-0",
                   "before:absolute before:inset-0 before:bg-black/30 before:opacity-100 before:transition-opacity before:duration-300 before:ease-linear before:content-['']",
                 ]}
               >
                 <video
-                  class="testimonial-video h-full w-full object-cover"
+                  x-ref="video"
+                  x-on:play="playing = true"
+                  x-on:pause="playing = false"
+                  x-on:ended="playing = false"
+                  class="h-full w-full object-cover"
                   playsinline
                   loop
                   disablepictureinpicture
@@ -110,16 +117,20 @@ const testimonials = [
                   </div>
                   <button
                     type="button"
-                    class="video-control group flex size-10 cursor-pointer items-center justify-center rounded-full border-none bg-white text-black shadow-sm transition-all duration-300 hover:scale-110 hover:shadow-md"
+                    x-on:click="$refs.video.paused ? $refs.video.play() : $refs.video.pause()"
+                    class="flex size-10 cursor-pointer items-center justify-center rounded-full border-none bg-white text-black shadow-sm transition-all duration-300 hover:scale-110 hover:shadow-md"
                     aria-label="Toggle video playback"
                   >
                     <Icon
                       name="material-symbols-light:play-arrow"
-                      class="h-7 w-7 group-[.playing]:hidden"
+                      x-show="!playing"
+                      class="h-7 w-7"
                     />
                     <Icon
                       name="material-symbols-light:pause"
-                      class="hidden h-5 w-5 group-[.playing]:block"
+                      x-show="playing"
+                      x-cloak
+                      class="h-5 w-5"
                     />
                   </button>
                 </div>
@@ -133,7 +144,45 @@ const testimonials = [
 </SectionWrapper>
 
 <script>
-  import { initTestimonialsSlider } from "@src/utils/testimonialsSwiper";
+  import { createSwiper } from "@src/utils/baseSwiper";
+
+  function initTestimonialsSlider() {
+    const styles = getComputedStyle(document.documentElement);
+    const bp = (name: string) =>
+      parseFloat(styles.getPropertyValue(`--breakpoint-${name}`)) * 16;
+
+    const swiper = createSwiper("testimonials", {
+      pagination: {
+        el: ".testimonials-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        [bp("sm")]: { slidesPerView: 1, spaceBetween: 16 },
+        [bp("md")]: { slidesPerView: 2, spaceBetween: 96 },
+        [bp("lg")]: { slidesPerView: 2, spaceBetween: 76 },
+        [bp("xl")]: { slidesPerView: 3, spaceBetween: 76, loop: false },
+      },
+      on: {
+        init: (swiper) => {
+          if (bp("xl") <= window.innerWidth) {
+            swiper.disable();
+            swiper.el.classList.add("-non-slider");
+          }
+        },
+        resize: (swiper) => {
+          if (bp("xl") <= window.innerWidth) {
+            swiper.disable();
+            swiper.el.classList.add("-non-slider");
+          } else {
+            swiper.enable();
+            swiper.el.classList.remove("-non-slider");
+          }
+        },
+      },
+    });
+
+    return () => swiper.destroy();
+  }
 
   let cleanup = initTestimonialsSlider();
 

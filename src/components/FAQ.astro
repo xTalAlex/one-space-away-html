@@ -16,25 +16,30 @@ const faqItems = t.faq.items;
     <SectionHeader tag={t.faq.tag} title={t.faq.title} />
   </div>
 
-  <div class="flex flex-col">
+  <div id="faq-accordion" x-data="{ active: null }" class="flex flex-col">
     {
-      faqItems.map((item) => (
-        <div class="accordion-item border-b border-black">
+      faqItems.map((item, index) => (
+        <div class="border-b border-black">
           <button
             type="button"
-            class="accordion-button flex w-full cursor-pointer items-center justify-between gap-4 border-none bg-transparent py-5 text-left transition-all duration-300 hover:opacity-65"
+            x-on:click={`active = active === ${index} ? null : ${index}`}
+            class="flex w-full cursor-pointer items-center justify-between gap-4 border-none bg-transparent py-5 text-left transition-all duration-300 hover:opacity-65"
           >
-            <span class="text-lg transition-all duration-300 in-[.active]:font-medium">
+            <span
+              x-bind:class={`active === ${index} && 'font-medium'`}
+              class="text-lg transition-all duration-300"
+            >
               {item.question}
             </span>
             <Icon
               name="material-symbols-light:add"
-              class="h-5 w-5 shrink-0 transition-transform duration-300 in-[.active]:rotate-45"
+              x-bind:class={`active === ${index} && 'rotate-45'`}
+              class="h-5 w-5 shrink-0 transition-transform duration-300"
             />
           </button>
-          <div class="accordion-content h-0 overflow-hidden transition-[height] duration-300">
-            <div class="translate-y-2.5 pb-3 opacity-0 transition-all duration-300 in-[.active]:translate-y-0 in-[.active]:opacity-100">
-              <p class="">{item.answer}</p>
+          <div x-show={`active === ${index}`} x-collapse>
+            <div class="pb-3">
+              <p>{item.answer}</p>
             </div>
           </div>
         </div>
@@ -42,10 +47,3 @@ const faqItems = t.faq.items;
     }
   </div>
 </SectionWrapper>
-
-<script>
-  import { initFaqAccordion } from "@src/utils/faqAccordion";
-
-  initFaqAccordion();
-  document.addEventListener("astro:after-swap", initFaqAccordion);
-</script>

@@ -2,8 +2,8 @@
 import "@src/styles/swiper-custom.css";
 
 import ButtonPrimary from "@src/components/ui/ButtonPrimary.astro";
-import { Icon } from "astro-icon/components";
 import { t } from "@src/i18n";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   sliderName: string;
@@ -24,24 +24,24 @@ const {
   <!-- Before/After Toggle -->
   {
     beforeAfter && (
-      <div class="mb-8 flex gap-4 px-0 md:px-16">
+      <div
+        id="portfolio-toggle"
+        class="mb-8 flex gap-4 px-0 md:px-16"
+        x-data="{ view: 'after' }"
+      >
         <button
           type="button"
-          class:list={[
-            "toggle-btn relative cursor-pointer pb-0.5 text-xl font-medium opacity-55 transition-opacity duration-300 hover:opacity-100 [&.active]:opacity-100",
-            "after:absolute after:-bottom-px after:left-0 after:block after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-250 after:ease-out after:content-[''] hover:after:origin-left hover:after:scale-x-100 [&.active]:after:origin-left [&.active]:after:scale-x-100",
-          ]}
-          data-view="before"
+          x-on:click="view = 'before'; $dispatch('portfolio-view', { view: 'before' })"
+          x-bind:class="view === 'before' ? 'opacity-100 after:origin-left after:scale-x-100' : 'opacity-55 after:origin-right after:scale-x-0'"
+          class="relative cursor-pointer pb-0.5 text-xl font-medium transition-opacity duration-300 after:absolute after:-bottom-px after:left-0 after:block after:h-0.5 after:w-full after:bg-current after:transition-transform after:duration-250 after:ease-out after:content-[''] hover:opacity-100 hover:after:origin-left hover:after:scale-x-100"
         >
           {t.portfolio.before}
         </button>
         <button
           type="button"
-          class:list={[
-            "toggle-btn active relative cursor-pointer pb-0.5 text-xl font-medium opacity-55 transition-opacity duration-300 hover:opacity-100 [&.active]:opacity-100",
-            "after:absolute after:-bottom-px after:left-0 after:block after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-250 after:ease-out after:content-[''] hover:after:origin-left hover:after:scale-x-100 [&.active]:after:origin-left [&.active]:after:scale-x-100",
-          ]}
-          data-view="after"
+          x-on:click="view = 'after'; $dispatch('portfolio-view', { view: 'after' })"
+          x-bind:class="view === 'after' ? 'opacity-100 after:origin-left after:scale-x-100' : 'opacity-55 after:origin-right after:scale-x-0'"
+          class="relative cursor-pointer pb-0.5 text-xl font-medium transition-opacity duration-300 after:absolute after:-bottom-px after:left-0 after:block after:h-0.5 after:w-full after:bg-current after:transition-transform after:duration-250 after:ease-out after:content-[''] hover:opacity-100 hover:after:origin-left hover:after:scale-x-100"
         >
           {t.portfolio.after}
         </button>
@@ -64,7 +64,10 @@ const {
               class={`nav-btn h-full w-full ${sliderName}-prev`}
               aria-label="Previous"
             >
-              <Icon name="material-symbols-light:chevron-left" class="h-6 w-6" />
+              <Icon
+                name="material-symbols-light:chevron-left"
+                class="h-6 w-6"
+              />
             </ButtonPrimary>
           </div>
           <div class="absolute top-1/2 right-0 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full shadow-lg md:flex">
@@ -73,7 +76,10 @@ const {
               class={`nav-btn h-full w-full ${sliderName}-next`}
               aria-label="Next"
             >
-              <Icon name="material-symbols-light:chevron-right" class="h-6 w-6" />
+              <Icon
+                name="material-symbols-light:chevron-right"
+                class="h-6 w-6"
+              />
             </ButtonPrimary>
           </div>
         </>

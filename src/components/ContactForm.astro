@@ -21,7 +21,20 @@ const disclaimerParts = t.contact.form.disclaimer.split(
 );
 ---
 
-<form id="contact-form" class="lg:mr-12" action="">
+<form
+  id="contact-form"
+  x-data="{ sending: false, sent: false }"
+  x-on:submit.prevent="
+    sending = true;
+    await new Promise(r => setTimeout(r, 1500));
+    sent = true;
+    sending = false;
+    $el.reset();
+    setTimeout(() => sent = false, 4000);
+  "
+  class="lg:mr-12"
+  action=""
+>
   <div class="mb-10 grid grid-cols-1 gap-6 xl:grid-cols-2">
     <div class="grid gap-2">
       <label class="text-lg font-medium" for="name">{t.contact.form.name}</label
@@ -61,7 +74,10 @@ const disclaimerParts = t.contact.form.disclaimer.split(
   <div
     class="flex flex-col items-start gap-4 xl:flex-row xl:items-center xl:justify-between"
   >
-    <ButtonPrimary>{t.contact.form.submit}</ButtonPrimary>
+    <ButtonPrimary x-bind:disabled="sending">
+      <span x-show="!sending">{t.contact.form.submit}</span>
+      <span x-show="sending" x-cloak>SENDING...</span>
+    </ButtonPrimary>
     <div class="max-w-80 text-xs">
       <span>
         <Icon
@@ -83,13 +99,12 @@ const disclaimerParts = t.contact.form.disclaimer.split(
       </span>
     </div>
   </div>
-  <div id="form-feedback" class="mt-6 font-medium text-green-800" hidden>
+  <div
+    x-show="sent"
+    x-transition
+    x-cloak
+    class="mt-6 font-medium text-green-800"
+  >
     <p>{t.contact.form.successText}</p>
   </div>
 </form>
-
-<script>
-  import { initContactForm } from "@src/utils/contactForm";
-
-  initContactForm();
-</script>

@@ -9,3 +9,7 @@
   --color-black: var(--color-zinc-950);
   --color-white: var(--color-stone-50);
 }
+
+[x-cloak] {
+  display: none !important;
+}

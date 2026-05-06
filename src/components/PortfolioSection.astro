@@ -53,22 +53,34 @@ const projects = [
   <BaseSwiper sliderName="portfolio" beforeAfter>
     {
       projects.map((project) => (
-        <div class="swiper-slide">
+        <div
+          class="swiper-slide"
+          x-data="{ view: 'after' }"
+          x-on:portfolio-view.window="view = $event.detail.view"
+        >
           <div class="project-image relative min-h-100 overflow-hidden">
             <Image
-              class="image before absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 [&.active]:opacity-100"
+              x-show="view === 'before'"
+              x-transition:enter="transition duration-300"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
+              class="absolute inset-0 h-full w-full object-cover"
               src={project.images.before.src}
               alt={project.images.before.alt}
               width={800}
-              aria-hidden="true"
+              x-bind:aria-hidden="view !== 'before' ? 'true' : 'false'"
             />
             <Image
-              class="image after active absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300 [&.active]:opacity-100"
+              x-show="view === 'after'"
+              x-transition:enter="transition duration-300"
+              x-transition:enter-start="opacity-0"
+              x-transition:enter-end="opacity-100"
+              class="absolute inset-0 h-full w-full object-cover"
               src={project.images.after.src}
               alt={project.images.after.alt}
               width={1144}
               height={800}
-              aria-hidden="false"
+              x-bind:aria-hidden="view !== 'after' ? 'true' : 'false'"
             />
           </div>
           <div class="project-info flex flex-col justify-center gap-8">
@@ -92,7 +104,29 @@ const projects = [
 </SectionWrapper>
 
 <script>
-  import { initPortfolioSlider } from "@src/utils/portfolioSwiper";
+  import { createSwiper } from "@src/utils/baseSwiper";
+
+  function initPortfolioSlider() {
+    const swiper = createSwiper("portfolio", {
+      spaceBetween: 30,
+      navigation: {
+        nextEl: ".portfolio-next",
+        prevEl: ".portfolio-prev",
+      },
+      pagination: {
+        el: ".portfolio-pagination",
+        clickable: true,
+      },
+    });
+
+    swiper.on("slideChangeTransitionStart", () => {
+      window.dispatchEvent(
+        new CustomEvent("portfolio-view", { detail: { view: "after" } }),
+      );
+    });
+
+    return () => swiper.destroy();
+  }
 
   let cleanup = initPortfolioSlider();
 
