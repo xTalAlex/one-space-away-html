@@ -1,0 +1,92 @@
+---
+import { t } from "../i18n";
+
+interface Props {
+  termsHref: string;
+  privacyHref: string;
+}
+
+const { termsHref, privacyHref } = Astro.props;
+
+const disclaimerHtml = t.contact.form.disclaimer
+  .replace(
+    "{terms}",
+    `<a class="text-link" href="${termsHref}">${t.footer.links.termsConditions}</a>`,
+  )
+  .replace(
+    "{privacy}",
+    `<a class="text-link" href="${privacyHref}">${t.footer.links.privacyPolicy}</a>`,
+  );
+---
+
+<form id="contact-form" class="lg:mr-12" action="">
+  <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-10">
+    <div class="grid gap-2">
+      <label class="text-lg font-medium" for="name">{t.contact.form.name}</label
+      >
+      <input
+        class="text-base py-4 px-5 shadow-none border border-black/20 transition-all duration-200 ease-out focus:text-black focus:border-black/70 focus:shadow-sm focus:outline-none hover:border-black/40"
+        id="name"
+        type="text"
+        placeholder={t.contact.form.namePlaceholder}
+        required
+      />
+    </div>
+    <div class="grid gap-2">
+      <label class="text-lg font-medium" for="email"
+        >{t.contact.form.email}</label
+      >
+      <input
+        class="text-base py-4 px-5 shadow-none border border-black/20 transition-all duration-200 ease-out focus:text-black focus:border-black/70 focus:shadow-sm focus:outline-none hover:border-black/40"
+        id="email"
+        type="email"
+        placeholder={t.contact.form.emailPlaceholder}
+        required
+      />
+    </div>
+    <div class="grid gap-2 col-span-full">
+      <label class="text-lg font-medium" for="message"
+        >{t.contact.form.project}</label
+      >
+      <textarea
+        class="text-base py-4 px-5 shadow-none border border-black/20 transition-all duration-200 ease-out focus:text-black focus:border-black/70 focus:shadow-sm focus:outline-none hover:border-black/40"
+        id="message"
+        placeholder={t.contact.form.projectPlaceholder}
+        rows="4"
+        required></textarea>
+    </div>
+  </div>
+  <div
+    class="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:justify-between"
+  >
+    <button type="submit" class="btn btn--primary"
+      >{t.contact.form.submit}</button
+    >
+    <div class="text-xs max-w-75">
+      <span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          class="inline w-4 mb-0.5 stroke-2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"
+          ></path><path d="M12 8h.01"></path></svg
+        >
+      </span>
+      <span set:html={disclaimerHtml} />
+    </div>
+  </div>
+  <div id="form-feedback" class="mt-6 text-green-800 font-medium" hidden>
+    <p>{t.contact.form.successText}</p>
+  </div>
+</form>
+
+<script>
+  import { initContactForm } from "@utils/contactForm";
+  initContactForm();
+</script>

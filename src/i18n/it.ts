@@ -151,6 +151,7 @@ export const it = {
       projectPlaceholder: "Parlaci un p\u00F3 del tuo progetto",
       submit: "INVIA MESSAGGIO",
       sending: "Invio...",
+      disclaimer: "Tutti i campi sono obbligatori. Inviando il modulo accetti i {terms} e la {privacy}.",
       successTitle: "Inviato",
       successText: "Il tuo messaggio \u00E8 stato inviato con successo. Ti risponderemo a breve.",
       errorTitle: "Errore",
