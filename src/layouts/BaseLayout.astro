@@ -1,12 +1,11 @@
 ---
-import "@styles/global.css";
+import "@src/styles/global.css";
 
-import Footer from "@components/Footer.astro";
 import { SITE, SOCIALS } from "@consts";
+import Footer from "@src/components/Footer.astro";
+import Header from "@src/components/Header.astro";
+import { t } from "@src/i18n";
 import { ClientRouter } from "astro:transitions";
-import Header from "components/Header.astro";
-
-import { t } from "../i18n";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 

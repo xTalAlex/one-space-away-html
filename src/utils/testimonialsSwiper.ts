@@ -1,4 +1,4 @@
-import { createSwiper } from "@utils/baseSwiper";
+import { createSwiper } from "@src/utils/baseSwiper";
 
 export function initTestimonialsSlider() {
   const testimonialsSwiper = createSwiper("testimonials", {

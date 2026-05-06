@@ -1,4 +1,4 @@
-import type { Site, Socials } from "./types";
+import type { Site, Socials } from "@src/types";
 
 export const SITE: Site = {
   COMPANY_NAME: "One Space Away",

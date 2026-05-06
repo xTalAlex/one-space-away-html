@@ -4,15 +4,9 @@
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "strictNullChecks": true,
-    "baseUrl": "src",
     "paths": {
-      "@assets/*": ["assets/*"],
-      "@consts": ["consts.ts"],
-      "@components/*": ["components/*"],
-      "@layouts/*": ["layouts/*"],
-      "@pages/*": ["pages/*"],
-      "@styles/*": ["styles/*"],
-      "@utils/*": ["utils/*"]
+      "@src/*": ["./src/*"],
+      "@consts": ["./src/consts.ts"]
     }
   }
 }

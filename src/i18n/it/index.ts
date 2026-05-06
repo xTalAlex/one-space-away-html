@@ -1,6 +1,6 @@
-import { errors } from "./errors";
-import { home } from "./home";
-import { ui } from "./ui";
+import { errors } from "@src/i18n/it/errors";
+import { home } from "@src/i18n/it/home";
+import { ui } from "@src/i18n/it/ui";
 
 export const namespaces = { ui, home, errors } as const;
 

@@ -1,7 +1,6 @@
 ---
-import ButtonSecondary from "@components/ui/ButtonSecondary.astro";
-
-import { t } from "../i18n";
+import ButtonSecondary from "@src/components/ui/ButtonSecondary.astro";
+import { t } from "@src/i18n";
 ---
 
 <header
@@ -110,8 +109,8 @@ import { t } from "../i18n";
 <div id="trigger" class="h-px"></div>
 
 <script>
-  import { initHeaderObserver } from "@utils/headerObserver";
-  import { initMobileMenu } from "@utils/mobileMenu";
+  import { initHeaderObserver } from "@src/utils/headerObserver";
+  import { initMobileMenu } from "@src/utils/mobileMenu";
 
   let headerCleanup = initHeaderObserver();
   let menuCleanup = initMobileMenu();
