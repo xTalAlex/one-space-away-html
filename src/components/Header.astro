@@ -4,7 +4,7 @@ import { t } from "../i18n";
 
 <header
   id="header"
-  class="fixed top-0 left-0 w-full flex px-4 lg:px-8 h-20 z-50 transition-all duration-200 ease-in-out"
+  class="fixed top-0 left-0 w-full flex px-4 lg:px-8 h-20 z-50 transition-all duration-200 ease-in-out [&.scrolled]:h-16 [&.scrolled]:backdrop-blur-[10px] [&.scrolled]:bg-white/95 [&.scrolled]:shadow-sm"
 >
   <div
     id="mobile-overlay"
@@ -121,18 +121,6 @@ import { t } from "../i18n";
 </header>
 
 <div id="trigger" class="h-px"></div>
-
-<style>
-  /* Replace .active and .scrolled classes with Alpine controller classes  */
-
-  .scrolled {
-    height: var(--h-menu-bar-scrolled) !important;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: var(--shadow-header);
-  }
-</style>
 
 <script>
   import { initHeaderObserver } from "@utils/headerObserver";
