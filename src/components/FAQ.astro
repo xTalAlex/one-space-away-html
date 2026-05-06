@@ -3,197 +3,48 @@ import { t } from "../i18n";
 const faqItems = t.faq.items;
 ---
 
-<section id="faq" class="faq">
-  <div class="section-container faq-container">
-    <div class="faq-header">
+<section id="faq" class="grid">
+  <div
+    class="section-container grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 lg:gap-16 items-start"
+  >
+    <div class="md:sticky md:top-8 md:max-w-4/5">
       <span class="section-tag">{t.faq.tag}</span>
       <h2 class="section-title">{t.faq.title}</h2>
     </div>
 
-    <div class="faq-content">
-      <div class="accordion">
-        {
-          faqItems.map((item) => (
-            <div class="accordion-item">
-              <button class="accordion-button">
-                <span class="button-text">{item.question}</span>
-                <svg
-                  class="button-icon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-              </button>
-              <div class="accordion-content">
-                <div class="content-wrapper">
-                  <p>{item.answer}</p>
-                </div>
+    <div class="flex flex-col">
+      {
+        faqItems.map((item) => (
+          <div class="accordion-item border-b border-black">
+            <button class="accordion-button w-full flex justify-between items-center gap-4 py-5 bg-transparent border-none cursor-pointer text-left transition-all duration-300 hover:opacity-65">
+              <span class="text-xl transition-all duration-300 in-[.active]:font-medium">
+                {item.question}
+              </span>
+              <svg
+                class="w-5 h-5 shrink-0 transition-transform duration-300 in-[.active]:rotate-45"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 5v14M5 12h14" />
+              </svg>
+            </button>
+            <div class="accordion-content h-0 overflow-hidden transition-[height] duration-300">
+              <div class="pb-3 opacity-0 translate-y-2.5 transition-all duration-300 in-[.active]:opacity-100 in-[.active]:translate-y-0">
+                <p>{item.answer}</p>
               </div>
             </div>
-          ))
-        }
-      </div>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
 
-<style>
-  .faq-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--px-64);
-    align-items: start;
-  }
-
-  .faq-header {
-    position: sticky;
-    top: var(--px-32);
-    max-width: 80%;
-  }
-
-  .accordion {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .accordion-item {
-    border-bottom: var(--px-1) solid var(--color-primary);
-  }
-
-  .accordion-button {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--px-16);
-    padding: var(--px-20) 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    transition: all var(--transition-long);
-  }
-
-  .button-text {
-    font-size: var(--text-xl);
-    font-weight: 400;
-    transition: all var(--transition-long);
-  }
-
-  .button-icon {
-    width: var(--px-20);
-    height: var(--px-20);
-    transition: all var(--transition-long);
-    flex-shrink: 0;
-  }
-
-  .accordion-item.active .button-text {
-    font-weight: 500;
-  }
-
-  .accordion-item.active .button-icon {
-    transform: rotate(45deg);
-  }
-
-  .accordion-content {
-    height: 0;
-    overflow: hidden;
-    transition: height var(--transition-long);
-  }
-
-  .content-wrapper {
-    padding-bottom: 0.813rem;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all var(--transition-long);
-  }
-
-  .accordion-item.active .content-wrapper {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .accordion-button:hover .button-text,
-    .accordion-button:hover .button-icon {
-      opacity: 0.65;
-    }
-  }
-
-  @media (max-width: 64rem) {
-    .faq-container {
-      gap: var(--px-32);
-    }
-  }
-
-  @media (max-width: 48rem) {
-    .faq-container {
-      grid-template-columns: 1fr;
-      gap: 0;
-    }
-
-    .faq-header {
-      position: static;
-      max-width: none;
-    }
-
-    .section-title {
-      margin-bottom: var(--px-44);
-    }
-  }
-</style>
-
 <script>
-  function initFAQAccordion() {
-    const accordionContainer = document.querySelector(".faq-container");
-
-    if (!accordionContainer) return;
-
-    accordionContainer.addEventListener("click", (e) => {
-      const button = (e.target as HTMLElement).closest(".accordion-button");
-
-      if (!button) return;
-
-      const item = button.closest(".accordion-item");
-      const content = item?.querySelector<HTMLElement>(".accordion-content");
-
-      if (!item || !content) return;
-
-      const isActive = item.classList.contains("active");
-
-      document.querySelectorAll(".accordion-item.active").forEach((accItem) => {
-        const accContent =
-          accItem.querySelector<HTMLElement>(".accordion-content");
-        const accButton = accItem.querySelector(".accordion-button");
-
-        if (!accContent || !accButton) return;
-
-        if (accItem !== item) {
-          accItem.classList.remove("active");
-          accContent.style.height = "0";
-          accButton.setAttribute("aria-expanded", "false");
-          accContent.setAttribute("aria-hidden", "true");
-        }
-      });
-
-      if (!isActive) {
-        item.classList.add("active");
-        content.style.height = content.scrollHeight + "px";
-        button.setAttribute("aria-expanded", "true");
-        content.setAttribute("aria-hidden", "false");
-      } else {
-        item.classList.remove("active");
-        content.style.height = "0";
-        button.setAttribute("aria-expanded", "false");
-        content.setAttribute("aria-hidden", "true");
-      }
-    });
-  }
-
-  initFAQAccordion();
-  document.addEventListener("astro:after-swap", initFAQAccordion);
+  import { initFaqAccordion } from "@utils/faqAccordion";
+  initFaqAccordion();
+  document.addEventListener("astro:after-swap", initFaqAccordion);
 </script>
