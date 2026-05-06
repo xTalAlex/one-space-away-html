@@ -32,7 +32,7 @@ p {
 .section-container {
   width: 100%;
   max-width: 90rem;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 .section-tag {

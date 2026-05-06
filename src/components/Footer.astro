@@ -6,62 +6,108 @@ import { t } from "../i18n";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="main-footer">
-  <div class="section-container footer footer-primary">
-    <div class="footer-brand">
-      <a href="/" class="headline logo" aria-label="One Space Away home">
+<footer
+  class="bg-neutral-100 pt-16 sm:pt-20 lg:pt-28 pb-7 px-7 lg:px-16 text-sm text-neutral-600"
+>
+  <div
+    class="section-container mb-12 sm:mb-20 lg:mb-28 flex flex-wrap gap-12 lg:flex-nowrap lg:gap-0 justify-between"
+  >
+    <div>
+      <a
+        href="/"
+        class="inline-block mb-7 text-xl font-bold text-black transition-all duration-200 ease-out hover:text-black active:text-black"
+        aria-label={SITE.TITLE}
+      >
         {t.header.logo}
       </a>
-      <p class="site-description">{t.hero.subtitle}</p>
+      <p class="mb-8">{t.hero.subtitle}</p>
 
-      <address class="footer-nav-list contact-info">
-        <p class="phone">
-          <span class="label">T.</span>
-          <a href=`tel:${SITE.TELEPHONE}`>{SITE.TELEPHONE}</a>
+      <address
+        class="inline-flex flex-col text-sm gap-2 text-nowrap not-italic"
+      >
+        <p>
+          <span>{t.footer.phoneLabel}</span>
+          <a
+            href=`tel:${SITE.TELEPHONE}`
+            class="transition-all duration-200 ease-out hover:text-black active:text-black"
+            >{SITE.TELEPHONE}</a
+          >
         </p>
-        <p class="email">
-          <span class="label">E.</span>
-          <a href=`mailto:${SITE.EMAIL}`>{SITE.EMAIL}</a>
+        <p>
+          <span>{t.footer.emailLabel}</span>
+          <a
+            href=`mailto:${SITE.EMAIL}`
+            class="transition-all duration-200 ease-out hover:text-black active:text-black"
+            >{SITE.EMAIL}</a
+          >
         </p>
       </address>
     </div>
 
-    <nav class="footer-navigation" aria-label="Footer navigation">
-      <div class="footer-nav-section">
-        <h2 class="headline footer-heading">{t.footer.company}</h2>
-        <ul class="footer-nav-list">
+    <nav
+      class="grid grid-cols-1 w-full gap-7 justify-between sm:grid-cols-3 sm:w-auto sm:gap-24 lg:w-full lg:ml-[16%]"
+      aria-label="Footer navigation"
+    >
+      <div>
+        <h2
+          class="mb-4 text-lg font-medium tracking-tight text-nowrap text-black"
+        >
+          {t.footer.company}
+        </h2>
+        <ul class="inline-flex flex-col text-sm gap-2 text-nowrap">
           <li>
-            <a href="#hero" class="footer-link">{t.header.nav.home}</a>
+            <a
+              href="#hero"
+              class="transition-all duration-200 ease-out hover:text-black active:text-black"
+              >{t.header.nav.home}</a
+            >
           </li>
           <li>
-            <a href="#about" class="footer-link">{t.header.nav.about}</a>
+            <a
+              href="#about"
+              class="transition-all duration-200 ease-out hover:text-black active:text-black"
+              >{t.header.nav.about}</a
+            >
           </li>
           <li>
-            <a href="#how-it-works" class="footer-link"
+            <a
+              href="#how-it-works"
+              class="transition-all duration-200 ease-out hover:text-black active:text-black"
               >{t.header.nav.howItWorks}</a
             >
           </li>
           <li>
-            <a href="#portfolio" class="footer-link">{t.header.nav.portfolio}</a
+            <a
+              href="#portfolio"
+              class="transition-all duration-200 ease-out hover:text-black active:text-black"
+              >{t.header.nav.portfolio}</a
             >
           </li>
           <li>
-            <a href="#contact" class="footer-link">{t.header.nav.contact}</a>
+            <a
+              href="#contact"
+              class="transition-all duration-200 ease-out hover:text-black active:text-black"
+              >{t.header.nav.contact}</a
+            >
           </li>
         </ul>
       </div>
 
-      <div class="footer-nav-section">
-        <h2 class="headline footer-heading">{t.footer.socialMedia}</h2>
-        <ul class="footer-nav-list social-links-list">
+      <div>
+        <h2
+          class="mb-4 text-lg font-medium tracking-tight text-nowrap text-black"
+        >
+          {t.footer.socialMedia}
+        </h2>
+        <ul class="inline-flex flex-col text-sm gap-2 text-nowrap">
           {
             SOCIALS.map((social) => (
               <>
-                <li class="social-item">
+                <li>
                   <a
                     href={social.HREF}
                     aria-label={social.LABEL}
-                    class="footer-link social-link"
+                    class="flex items-center gap-1.5 [&>svg]:h-4.5 transition-all duration-200 ease-out hover:text-black active:text-black"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -75,21 +121,31 @@ const currentYear = new Date().getFullYear();
         </ul>
       </div>
 
-      <div class="footer-nav-section">
-        <h2 class="headline footer-heading">{t.footer.legal}</h2>
-        <ul class="footer-nav-list">
+      <div>
+        <h2
+          class="mb-4 text-lg font-medium tracking-tight text-nowrap text-black"
+        >
+          {t.footer.legal}
+        </h2>
+        <ul class="inline-flex flex-col text-sm gap-2 text-nowrap">
           <li>
-            <a href="legal/privacy" class="footer-link"
+            <a
+              href="legal/privacy"
+              class="transition-all duration-200 ease-out hover:text-black active:text-black"
               >{t.footer.links.privacyPolicy}</a
             >
           </li>
           <li>
-            <a href="legal/terms" class="footer-link"
+            <a
+              href="legal/terms"
+              class="transition-all duration-200 ease-out hover:text-black active:text-black"
               >{t.footer.links.termsConditions}</a
             >
           </li>
           <li>
-            <a href="/sitemap-index.xml" class="footer-link"
+            <a
+              href="/sitemap-index.xml"
+              class="transition-all duration-200 ease-out hover:text-black active:text-black"
               >{t.footer.links.sitemap}</a
             >
           </li>
@@ -98,148 +154,14 @@ const currentYear = new Date().getFullYear();
     </nav>
   </div>
 
-  <div class="footer footer-secondary">
-    <div class="copyright">
+  <div
+    class="font-medium flex flex-wrap gap-x-12 gap-y-1.5 sm:gap-12 lg:flex-nowrap lg:gap-0 justify-between"
+  >
+    <div>
       <p>&copy; {SITE.COMPANY_NAME} {currentYear}.</p>
     </div>
-    <div class="location">
-      <p>Based in Beverly Hills, California.</p>
+    <div>
+      <p>{t.footer.location}</p>
     </div>
   </div>
 </footer>
-
-<style>
-  a {
-    transition: all var(--transition-short);
-  }
-
-  a:active {
-    color: var(--color-text-primary);
-  }
-
-  .main-footer {
-    background-color: var(--color-background);
-    padding-block: var(--px-112) var(--px-28);
-    padding-inline: var(--px-64);
-    color: var(--color-text-dark);
-    font-size: var(--text-sm);
-  }
-
-  .footer {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .headline {
-    color: var(--color-text-primary);
-  }
-
-  .main-footer p {
-    opacity: 1;
-  }
-
-  .footer-primary {
-    margin-bottom: var(--px-112);
-  }
-
-  .logo {
-    display: inline-block;
-    margin-bottom: var(--px-28);
-    font-size: var(--text-xl);
-    font-weight: 700;
-  }
-
-  .site-description {
-    margin-bottom: var(--px-32);
-  }
-
-  .footer-navigation {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
-    width: 100%;
-    margin-left: 16%;
-    gap: var(--px-96);
-  }
-
-  .footer-heading {
-    margin-bottom: var(--px-16);
-    font-size: var(--text-lg);
-    letter-spacing: -0.02em;
-    font-weight: 500;
-    text-wrap: nowrap;
-  }
-
-  .footer-nav-list {
-    display: inline-flex;
-    flex-direction: column;
-    font-size: var(--text-sm);
-    gap: var(--px-8);
-    text-wrap: nowrap;
-  }
-
-  .social-link {
-    display: flex;
-    align-items: center;
-    gap: var(--px-6);
-  }
-
-  .social-link :global(svg) {
-    height: var(--px-18);
-  }
-
-  .contact-info {
-    font-style: normal;
-  }
-
-  .footer-secondary {
-    font-weight: 500;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    a:hover {
-      color: var(--color-text-primary);
-    }
-  }
-
-  @media screen and (max-width: 64rem) {
-    .main-footer {
-      padding-top: var(--px-80);
-      padding-inline: var(--px-28);
-    }
-
-    .footer {
-      flex-wrap: wrap;
-      gap: var(--px-48);
-    }
-
-    .footer-navigation {
-      margin-left: 0;
-      width: auto;
-    }
-
-    .footer-primary {
-      margin-bottom: var(--px-80);
-    }
-  }
-
-  @media screen and (max-width: 37.5rem) {
-    .main-footer {
-      padding-top: var(--px-64);
-    }
-
-    .footer-navigation {
-      grid-template-columns: 1fr;
-      width: 100%;
-      gap: var(--px-28);
-    }
-
-    .footer-secondary {
-      gap: var(--px-6) var(--px-48);
-    }
-
-    .footer-primary {
-      margin-bottom: var(--px-48);
-    }
-  }
-</style>

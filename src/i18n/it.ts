@@ -162,6 +162,10 @@ export const it = {
     company: "Azienda",
     socialMedia: "Social Media",
     legal: "Legale e Stampa",
+    phoneLabel: "T.",
+    emailLabel: "E.",
+    copyright: "Tutti i diritti riservati.",
+    location: "Con sede a Beverly Hills, California.",
     links: {
       privacyPolicy: "Informativa sulla Privacy",
       termsConditions: "Termini & Condizioni",
