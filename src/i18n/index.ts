@@ -1,6 +1,7 @@
+import { SITE } from "@consts";
+
 import type { en as DefaultTranslations } from "./en";
 import { namespaces as defaultNamespaces } from "./en";
-import { SITE } from "@consts";
 
 // Types
 type Translations = typeof DefaultTranslations;

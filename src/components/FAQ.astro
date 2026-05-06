@@ -1,7 +1,9 @@
 ---
-import { t } from "../i18n";
-import SectionWrapper from "@components/ui/SectionWrapper.astro";
 import SectionHeader from "@components/ui/SectionHeader.astro";
+import SectionWrapper from "@components/ui/SectionWrapper.astro";
+
+import { t } from "../i18n";
+
 const faqItems = t.faq.items;
 ---
 
@@ -46,6 +48,7 @@ const faqItems = t.faq.items;
 
 <script>
   import { initFaqAccordion } from "@utils/faqAccordion";
+
   initFaqAccordion();
   document.addEventListener("astro:after-swap", initFaqAccordion);
 </script>

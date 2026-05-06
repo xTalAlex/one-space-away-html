@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Navigation, Pagination, Keyboard } from "swiper/modules";
+import { Keyboard, Navigation, Pagination } from "swiper/modules";
 import type { SwiperOptions } from "swiper/types";
 
 export function createSwiper(sliderName: string, swiperConfig: SwiperOptions) {

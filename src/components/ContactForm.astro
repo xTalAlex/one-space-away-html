@@ -1,7 +1,8 @@
 ---
-import { t } from "../i18n";
 import ButtonPrimary from "@components/ui/ButtonPrimary.astro";
 import TextLink from "@components/ui/TextLink.astro";
+
+import { t } from "../i18n";
 
 interface Props {
   termsHref: string;
@@ -98,5 +99,6 @@ const disclaimerParts = t.contact.form.disclaimer.split(
 
 <script>
   import { initContactForm } from "@utils/contactForm";
+
   initContactForm();
 </script>
