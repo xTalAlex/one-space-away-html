@@ -20,7 +20,10 @@ const faqItems = t.faq.items;
     {
       faqItems.map((item) => (
         <div class="accordion-item border-b border-black">
-          <button class="accordion-button flex w-full cursor-pointer items-center justify-between gap-4 border-none bg-transparent py-5 text-left transition-all duration-300 hover:opacity-65">
+          <button
+            type="button"
+            class="accordion-button flex w-full cursor-pointer items-center justify-between gap-4 border-none bg-transparent py-5 text-left transition-all duration-300 hover:opacity-65"
+          >
             <span class="text-xl transition-all duration-300 in-[.active]:font-medium">
               {item.question}
             </span>

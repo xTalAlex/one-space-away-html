@@ -96,6 +96,7 @@ const testimonials = [
                   poster={testimonial.video?.poster}
                 >
                   <source src={testimonial.video?.src} type="video/mp4" />
+                  <track kind="captions" />
                 </video>
                 <div class="absolute top-2 right-2 left-3.5 flex items-center justify-between text-white md:top-2.5 md:right-4 md:left-4">
                   <div class="flex flex-col gap-1">
@@ -107,6 +108,7 @@ const testimonials = [
                     </span>
                   </div>
                   <button
+                    type="button"
                     class="video-control group flex size-10 cursor-pointer items-center justify-center rounded-full border-none bg-white shadow-sm transition-all duration-300 hover:scale-110 hover:shadow-md"
                     aria-label="Toggle video playback"
                   >

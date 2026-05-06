@@ -13,13 +13,13 @@ export function initTestimonialsSlider() {
       1200: { slidesPerView: 3, spaceBetween: 76, loop: false },
     },
     on: {
-      init: function (swiper) {
+      init: (swiper) => {
         if (1200 <= window.innerWidth) {
           swiper.disable();
           swiper.el.classList.add("-non-slider");
         }
       },
-      resize: function (swiper) {
+      resize: (swiper) => {
         if (1200 <= window.innerWidth) {
           swiper.disable();
           swiper.el.classList.add("-non-slider");

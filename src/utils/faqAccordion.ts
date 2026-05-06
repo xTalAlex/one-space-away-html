@@ -25,7 +25,7 @@ export function initFaqAccordion() {
 
     if (!isActive) {
       item.classList.add("active");
-      content.style.height = content.scrollHeight + "px";
+      content.style.height = `${content.scrollHeight}px`;
     } else {
       item.classList.remove("active");
       content.style.height = "0";

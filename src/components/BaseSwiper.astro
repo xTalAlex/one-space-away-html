@@ -26,6 +26,7 @@ const {
     beforeAfter && (
       <div class="mb-8 flex gap-4 px-0 md:px-16">
         <button
+          type="button"
           class:list={[
             "toggle-btn relative cursor-pointer pb-0.5 text-xl font-medium opacity-55 transition-opacity duration-300 hover:opacity-100 [&.active]:opacity-100",
             "after:absolute after:-bottom-px after:left-0 after:block after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-250 after:ease-out after:content-[''] hover:after:origin-left hover:after:scale-x-100 [&.active]:after:origin-left [&.active]:after:scale-x-100",
@@ -35,6 +36,7 @@ const {
           {t.portfolio.before}
         </button>
         <button
+          type="button"
           class:list={[
             "toggle-btn active relative cursor-pointer pb-0.5 text-xl font-medium opacity-55 transition-opacity duration-300 hover:opacity-100 [&.active]:opacity-100",
             "after:absolute after:-bottom-px after:left-0 after:block after:h-0.5 after:w-full after:origin-right after:scale-x-0 after:bg-current after:transition-transform after:duration-250 after:ease-out after:content-[''] hover:after:origin-left hover:after:scale-x-100 [&.active]:after:origin-left [&.active]:after:scale-x-100",
