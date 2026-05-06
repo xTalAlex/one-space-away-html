@@ -1,0 +1,22 @@
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "swiper/css/navigation";
+
+@reference "./global.css";
+
+/* Swiper Custom Styles */
+.swiper-pagination {
+  @apply relative md:mt-8 mt-6;
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  @apply bottom-0!;
+}
+
+.swiper-pagination-bullet {
+  @apply w-2 h-2 rounded-full border-none bg-black/30 opacity-100 cursor-pointer p-0 transition-all duration-300 ease-out;
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-black scale-150;
+}
