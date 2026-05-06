@@ -1,4 +1,5 @@
 export const en = {
+  skipToContent: "Skip to content",
   header: {
     logo: "One Space Away",
     nav: {

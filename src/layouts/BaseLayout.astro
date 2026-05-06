@@ -5,6 +5,7 @@ import "@styles/global.css";
 import { Font } from "astro:assets";
 import { SITE, SOCIALS } from "@consts";
 import { ClientRouter } from "astro:transitions";
+import { t } from "../i18n";
 import Header from "components/Header.astro";
 import Footer from "@components/Footer.astro";
 
@@ -109,7 +110,11 @@ const schemaData = {
     }
   </head>
   <body>
-    <a href="#main" class="skip-link">Skip to content</a>
+    <a
+      href="#main"
+      class="absolute top-2.5 left-2 translate-y-[-200%] py-3 px-4 rounded-md text-white bg-black z-50 opacity-0 transition-opacity duration-200 ease-in-out focus-visible:opacity-100 focus-visible:translate-y-0"
+      >{t.skipToContent}</a
+    >
 
     <Header />
     <main id="main" tabindex="-1">
@@ -118,24 +123,3 @@ const schemaData = {
     <Footer />
   </body>
 </html>
-
-<style>
-  .skip-link {
-    position: absolute;
-    top: var(--px-10);
-    left: var(--px-8);
-    transform: translateY(-200%);
-    padding: var(--px-12) var(--px-16);
-    border-radius: var(--px-6);
-    color: white;
-    background: #000;
-    z-index: 1001;
-    opacity: 0;
-    transition: opacity var(--transition-short);
-  }
-
-  .skip-link:focus-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
