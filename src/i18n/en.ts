@@ -184,4 +184,7 @@ export const en = {
       sitemap: "SiteMap",
     },
   },
+  legal: {
+    effectiveDate: "Effective Date:",
+  },
 };

@@ -184,4 +184,7 @@ export const it = {
       sitemap: "Mappa del Sito",
     },
   },
+  legal: {
+    effectiveDate: "Data di entrata in vigore:",
+  },
 };
