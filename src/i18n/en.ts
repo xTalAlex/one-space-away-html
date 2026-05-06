@@ -73,14 +73,17 @@ export const en = {
       {
         title: "Connect",
         description: "Begin with a consultation where you share your style, needs, and vision. We listen, ask the right questions, and get to know what truly makes a space feel like home for you.",
+        imageAlt: "People talking about an interior design project",
       },
       {
         title: "Design",
         description: "Using your input, we make a personalized design plan with mood boards, 3D renderings, and detailed layouts — so you can visualize your space before the transformation begins.",
+        imageAlt: "Detailed layouts of entry and bath",
       },
       {
         title: "Transform",
         description: "Watch your space come to life as our team brings the design to reality with expert craftsmanship, thoughtful execution, and a keen eye for detail.",
+        imageAlt: "Expert measuring distance",
       },
     ],
   },

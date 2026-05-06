@@ -73,14 +73,17 @@ export const it = {
       {
         title: "Connettiti",
         description: "Inizia con una consulenza in cui condividi il tuo stile, le tue esigenze e la tua visione. Ascoltiamo, facciamo le domande giuste e capiamo cosa fa davvero sentire uno spazio come casa per te.",
+        imageAlt: "Persone che parlano di un progetto di interior design",
       },
       {
         title: "Progetta",
         description: "Utilizzando i tuoi input, creiamo un piano di design personalizzato con mood board, rendering 3D e layout dettagliati, in modo che tu possa visualizzare il tuo spazio prima che inizi la trasformazione.",
+        imageAlt: "Layout dettagliati di ingresso e bagno",
       },
       {
         title: "Trasforma",
         description: "Guarda il tuo spazio prendere vita mentre il nostro team trasforma il design in realtà con maestria artigianale, esecuzione attenta e occhio per i dettagli.",
+        imageAlt: "Esperto che misura le distanze",
       },
     ],
   },
