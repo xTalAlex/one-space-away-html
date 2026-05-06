@@ -6,55 +6,9 @@
 
 **Features**
 
-- Astro 6.0 Ready:
-  - Native Font Optimization
-  - Pre-configured CSP (Content Security Policy) and security headers (optimized for Cloudflare, easily adaptable for Vercel or Netlify).
-    <img width="1910" height="915" alt="HTTP Observatory" src="https://github.com/user-attachments/assets/4a38f8c3-c851-4239-a0b5-73f80fe8be57" />
+- Astro 6.0 Ready
 - Responsive: mobile, tablet, and desktop devices.
 - Stack: Astro (HTML, Tailwindcss, and JS) with minimal dependencies.
-
-## Deployment
-
-You will find a `_headers `file located in the `/public` folder. This file handles the Content Security Policy (CSP) and XSS protections mainly for Cloudflare.
-
-If you are deploying to Vercel or Netlify, simply move these rules to a `vercel.json` or `netlify.toml` file respectively.
-
-## Media & Image Optimization
-
-### Local Optimization (Default)
-
-By default, the template uses Astro’s built-in `<Image />` component for automatic optimization (WebP/AVIF conversion, resizing).
-
-```astro
-import consultationImage from '/src/assets/images/consultation.jpg';
-
-<div class="process-step-image-wrapper">
-   <Image
-     src={consultationImage}
-     alt="Interior Design Consultation"
-     class="media"
-   />
-</div>
-```
-
-### Cloudinary Integration (Optional)
-
-For top-tier loading speeds and high-resolution assets, you can easily swap to [Astro-Cloudinary](https://docs.astro.build/en/guides/media/cloudinary/).
-
-```
-npm add astro-cloudinary
-```
-
-```astro
-import { CldImage } from 'astro-cloudinary';
-
-<CldImage
-  src="your-public-id"
-  width="800"
-  height="600"
-  alt="Project Transformation"
-/>
-```
 
 ## Fonts
 
