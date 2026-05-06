@@ -2,13 +2,17 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
 import { t } from "../../i18n";
+import { SITE } from "@consts";
 
 export async function getStaticPaths() {
   const legal = await getCollection("legal");
-  return legal.map((doc) => ({
-    params: { id: doc.id },
-    props: { doc },
-  }));
+  const locale = SITE.LOCALE ?? "en";
+  return legal
+    .filter((doc) => doc.id.startsWith(`${locale}/`))
+    .map((doc) => ({
+      params: { id: doc.id.replace(`${locale}/`, "") },
+      props: { doc },
+    }));
 }
 
 const { doc } = Astro.props;
