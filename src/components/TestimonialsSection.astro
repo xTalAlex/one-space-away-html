@@ -53,8 +53,7 @@ const testimonials = [
             <article
               class:list={[
                 "flex flex-col rounded-lg overflow-hidden h-full max-w-93",
-                testimonial.type === "video" &&
-                  "aspect-2/3 max-h-137.5 has-focus-visible:overflow-visible",
+                testimonial.type === "video" && "aspect-2/3 max-h-137.5",
               ]}
             >
               {testimonial.type === "image" ? (
@@ -62,7 +61,7 @@ const testimonials = [
                   <div class="flex items-center gap-4 mt-8 mb-6 p-4 md:p-0">
                     <div class="w-20 h-20 overflow-hidden rounded-full shrink-0">
                       <Image
-                        class="media"
+                        class="w-full h-full object-cover"
                         src={testimonial.client.image as ImageMetadata}
                         alt={testimonial.client.name}
                         width={160}
@@ -88,7 +87,7 @@ const testimonials = [
                   ]}
                 >
                   <video
-                    class="media testimonial-video"
+                    class="w-full h-full object-cover testimonial-video"
                     playsinline
                     loop
                     disablepictureinpicture

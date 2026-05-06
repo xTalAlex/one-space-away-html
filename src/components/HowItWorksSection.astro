@@ -45,7 +45,7 @@ const processSteps = [
         processSteps.map((step) => (
           <div class="flex flex-col md:flex-row gap-8 lg:gap-16 items-center even:md:flex-row-reverse">
             <div class="md:flex-1">
-              <h3 class="section-subtitle text-xl">{step.title}</h3>
+              <h3 class="section-subtitle">{step.title}</h3>
               <p class="max-w-125 md:max-lg:max-w-full">{step.description}</p>
             </div>
             <div class="md:flex-1 w-full h-full max-h-82.5 overflow-hidden">
@@ -54,7 +54,7 @@ const processSteps = [
                 alt={step.image.alt}
                 width={1272}
                 height={660}
-                class="media"
+                class="w-full h-full object-cover"
               />
             </div>
           </div>

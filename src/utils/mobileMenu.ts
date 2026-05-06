@@ -10,7 +10,7 @@ export function initMobileMenu() {
     navContent?.classList.remove("active");
     overlay?.classList.remove("active");
     hamburger?.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("no-scroll");
+    document.body.classList.remove("overflow-hidden");
   }
 
   function openMenu() {
@@ -18,7 +18,7 @@ export function initMobileMenu() {
     navContent?.classList.add("active");
     overlay?.classList.add("active");
     hamburger?.setAttribute("aria-expanded", "true");
-    document.body.classList.add("no-scroll");
+    document.body.classList.add("overflow-hidden");
   }
 
   const toggleMenu = () => {

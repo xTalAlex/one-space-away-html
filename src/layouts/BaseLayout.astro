@@ -1,5 +1,4 @@
 ---
-import "@styles/_variables.css";
 import "@styles/global.css";
 
 import { Font } from "astro:assets";
@@ -49,7 +48,7 @@ const schemaData = {
 ---
 
 <!doctype html>
-<html lang=`${SITE.LOCALE ?? "en"}`>
+<html lang=`${SITE.LOCALE ?? "en"}` class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -109,10 +108,10 @@ const schemaData = {
       )
     }
   </head>
-  <body>
+  <body class="text-base">
     <a
       href="#main"
-      class="absolute top-2.5 left-2 translate-y-[-200%] py-3 px-4 rounded-md text-white bg-black z-50 opacity-0 transition-opacity duration-200 ease-in-out focus-visible:opacity-100 focus-visible:translate-y-0"
+      class="absolute top-2.5 left-2 translate-y-[-200%] py-3 px-4 rounded-md text-white bg-black opacity-0 transition-opacity duration-200 ease-in-out focus-visible:opacity-100 focus-visible:translate-y-0 focus-visible:z-100 focus-visible:outline"
       >{t.skipToContent}</a
     >
 
