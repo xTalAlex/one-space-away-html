@@ -6,6 +6,8 @@ import after1Image from "/src/assets/images/after1.png";
 import before2Image from "/src/assets/images/before2.png";
 import after2Image from "/src/assets/images/after2.png";
 import { t } from "../i18n";
+import SectionHeader from "@components/ui/SectionHeader.astro";
+import SectionWrapper from "@components/ui/SectionWrapper.astro";
 
 const projects = [
   {
@@ -45,10 +47,8 @@ const projects = [
 ];
 ---
 
-<section id="portfolio">
-  <div class="section-container">
-    <span class="section-tag">{t.portfolio.tag}</span>
-    <h2 class="section-title">{t.portfolio.title}</h2>
+<SectionWrapper id="portfolio">
+    <SectionHeader tag={t.portfolio.tag} title={t.portfolio.title} />
     <BaseSwiper sliderName="portfolio" beforeAfter>
       {
         projects.map((project) => (
@@ -72,13 +72,13 @@ const projects = [
             </div>
             <div class="project-info flex flex-col justify-center gap-8">
               <div class="flex flex-col gap-4">
-                <h3 class="section-subtitle mb-0">
+                <h3 class="text-xl font-semibold mb-0">
                   {project.info.challenge.title}
                 </h3>
                 <p>{project.info.challenge.text}</p>
               </div>
               <div class="flex flex-col gap-4">
-                <h3 class="section-subtitle mb-0">
+                <h3 class="text-xl font-semibold mb-0">
                   {project.info.result.title}
                 </h3>
                 <p>{project.info.result.text}</p>
@@ -88,8 +88,7 @@ const projects = [
         ))
       }
     </BaseSwiper>
-  </div>
-</section>
+</SectionWrapper>
 
 <script>
   import { initPortfolioSlider } from "@utils/portfolioSwiper";

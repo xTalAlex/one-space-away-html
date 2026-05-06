@@ -4,6 +4,8 @@ import { Image } from "astro:assets";
 import sarahJohnsonImage from "/src/assets/images/sarah-johnson.jpg";
 import emmaImage from "/src/assets/images/emma.jpg";
 import { t } from "../i18n";
+import SectionHeader from "@components/ui/SectionHeader.astro";
+import SectionWrapper from "@components/ui/SectionWrapper.astro";
 
 const testimonials = [
   {
@@ -41,10 +43,8 @@ const testimonials = [
 ];
 ---
 
-<section id="testimonials">
-  <div class="section-container">
-    <span class="section-tag">{t.testimonials.tag}</span>
-    <h2 class="section-title">{t.testimonials.title}</h2>
+<SectionWrapper id="testimonials">
+    <SectionHeader tag={t.testimonials.tag} title={t.testimonials.title} />
 
     <BaseSwiper sliderName="testimonials" navigation={false}>
       {
@@ -134,8 +134,7 @@ const testimonials = [
         ))
       }
     </BaseSwiper>
-  </div>
-</section>
+</SectionWrapper>
 
 <script>
   import { initTestimonialsSlider } from "@utils/testimonialsSwiper";

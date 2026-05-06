@@ -1,0 +1,18 @@
+---
+import ContainerDiv from "./ContainerDiv.astro";
+
+interface Props {
+  id?: string;
+  class?: string;
+  containerClass?: string;
+  py?: string;
+}
+
+const { id, class: className = "", containerClass = "", py = "py-16 sm:py-20 lg:py-24" } = Astro.props;
+---
+
+<section id={id} class:list={[py, "px-5 sm:px-7 lg:px-16", className]}>
+  <ContainerDiv class={containerClass}>
+    <slot />
+  </ContainerDiv>
+</section>

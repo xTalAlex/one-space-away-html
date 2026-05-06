@@ -2,32 +2,33 @@
 import { Image } from "astro:assets";
 import twoWomenSittingImage from "/src/assets/images/two-women-sitting.png";
 import { t } from "../i18n";
+import SectionHeader from "@components/ui/SectionHeader.astro";
+import SectionWrapper from "@components/ui/SectionWrapper.astro";
 ---
 
-<section id="about">
-  <div class="section-container">
-    <span class="section-tag">{t.about.tag}</span>
-    <h2 class="section-title">{t.about.title}</h2>
-    <div class="grid grid-cols-1 gap-8 items-center md:grid-cols-2 lg:gap-16">
-      <div
-        class="w-full h-full min-h-88 overflow-hidden aspect-4/3 -order-1 md:min-h-100 md:order-0 lg:min-h-112"
-      >
-        <Image
-          src={twoWomenSittingImage}
-          alt={t.about.imageAlt}
-          class="w-full h-full object-cover"
-        />
-      </div>
-      <div class="lg:max-w-150">
-        {
-          t.about.items.map((content) => (
-            <>
-              <h3 class="section-subtitle">{content.title}</h3>
-              <p class="mb-8 last:mb-0">{content.text}</p>
-            </>
-          ))
-        }
-      </div>
+<SectionWrapper id="about">
+  <SectionHeader tag={t.about.tag} title={t.about.title} />
+  <div class="grid grid-cols-1 gap-8 items-center md:grid-cols-2 lg:gap-16">
+    <div
+      class="w-full h-full min-h-88 overflow-hidden aspect-4/3 -order-1 md:min-h-100 md:order-0 lg:min-h-112"
+    >
+      <Image
+        src={twoWomenSittingImage}
+        alt={t.about.imageAlt}
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div class="lg:max-w-150">
+      {
+        t.about.items.map((content) => (
+          <>
+            <h3 class="text-xl font-semibold mb-4">{content.title}</h3>
+            <p class="leading-relaxed opacity-80 mb-8 last:mb-0">
+              {content.text}
+            </p>
+          </>
+        ))
+      }
     </div>
   </div>
-</section>
+</SectionWrapper>

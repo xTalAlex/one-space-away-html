@@ -1,6 +1,7 @@
 ---
 import "@styles/swiper-custom.css";
 import { t } from "../i18n";
+import ButtonPrimary from "@components/ui/ButtonPrimary.astro";
 
 interface Props {
   sliderName: string;
@@ -53,9 +54,10 @@ const {
     {
       navigation && (
         <>
-          <div class="absolute top-1/2 -translate-y-1/2 left-0 w-12 h-12 rounded-full overflow-hidden hidden md:flex items-center justify-center shadow-lg z-2 transition-all duration-400 ease-elastic">
-            <button
-              class={`nav-btn btn--primary w-full h-full flex items-center justify-center cursor-pointer bg-black text-white ${sliderName}-prev`}
+          <div class="absolute top-1/2 -translate-y-1/2 left-0 w-12 h-12 rounded-full overflow-hidden hidden md:flex items-center justify-center shadow-lg z-10">
+            <ButtonPrimary
+              compact
+              class={`nav-btn w-full h-full ${sliderName}-prev`}
               aria-label="Previous"
             >
               <svg
@@ -68,11 +70,12 @@ const {
               >
                 <path d="M15 18l-6-6 6-6" />
               </svg>
-            </button>
+            </ButtonPrimary>
           </div>
-          <div class="absolute top-1/2 -translate-y-1/2 right-0 w-12 h-12 rounded-full overflow-hidden hidden md:flex items-center justify-center shadow-lg z-2 transition-all duration-400 ease-elastic">
-            <button
-              class={`nav-btn btn--primary w-full h-full flex items-center justify-center cursor-pointer bg-black text-white ${sliderName}-next`}
+          <div class="absolute top-1/2 -translate-y-1/2 right-0 w-12 h-12 rounded-full overflow-hidden hidden md:flex items-center justify-center shadow-lg z-10">
+            <ButtonPrimary
+              compact
+              class={`nav-btn w-full h-full ${sliderName}-next`}
               aria-label="Next"
             >
               <svg
@@ -85,7 +88,7 @@ const {
               >
                 <path d="M9 18l6-6-6-6" />
               </svg>
-            </button>
+            </ButtonPrimary>
           </div>
         </>
       )

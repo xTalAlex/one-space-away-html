@@ -2,16 +2,14 @@
 import { SITE } from "@consts";
 import { t } from "../i18n";
 import ContactForm from "./ContactForm.astro";
+import SectionHeader from "@components/ui/SectionHeader.astro";
+import SectionWrapper from "@components/ui/SectionWrapper.astro";
 ---
 
-<section id="contact" class="grid">
-  <div class="section-container grid">
+<SectionWrapper id="contact" class="grid" containerClass="grid">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       <div class="lg:mr-12">
-        <span class="section-tag">{t.contact.tag}</span>
-        <h2 class="section-title">
-          {t.contact.title}
-        </h2>
+        <SectionHeader tag={t.contact.tag} title={t.contact.title} />
       </div>
 
       <address class="grid grid-cols-1 sm:grid-cols-2 gap-6 not-italic mb-14">
@@ -109,5 +107,4 @@ import ContactForm from "./ContactForm.astro";
           class="w-full h-full min-h-75 md:min-h-112"></iframe>
       </div>
     </div>
-  </div>
-</section>
+</SectionWrapper>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import ButtonPrimary from "@components/ui/ButtonPrimary.astro";
 
 interface Props {
   title: string;
@@ -20,9 +21,12 @@ const { title, description, errorCode, errorMessage, errorDescription } =
   >
     <div class="w-full flex flex-col items-center text-center max-w-xl">
       <h1 class="text-6xl lg:text-7xl font-bold mb-6">{errorCode}</h1>
-      <p class="text-2xl font-medium opacity-100 mb-4">{errorMessage}</p>
-      <p class="text-lg mb-8">{errorDescription}</p>
-      <a href="/" class="btn btn--primary inline-block">GO TO HOMEPAGE</a>
+      <p class="leading-relaxed text-2xl font-medium mb-4">
+        {errorMessage}
+      </p>
+      <p class="leading-relaxed opacity-80 text-lg mb-8">{errorDescription}</p>
+      <ButtonPrimary href="/" class="inline-block">GO TO HOMEPAGE</ButtonPrimary
+      >
     </div>
   </section>
 </BaseLayout>

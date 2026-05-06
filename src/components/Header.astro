@@ -1,5 +1,6 @@
 ---
 import { t } from "../i18n";
+import ButtonSecondary from "@components/ui/ButtonSecondary.astro";
 ---
 
 <header
@@ -12,7 +13,7 @@ import { t } from "../i18n";
   >
   </div>
   <nav
-    class="section-container relative w-full flex items-center justify-between text-base font-medium"
+    class="w-full max-w-7xl mx-auto relative flex items-center justify-between text-base font-medium"
     role="navigation"
     aria-label="Main navigation"
   >
@@ -67,39 +68,23 @@ import { t } from "../i18n";
         </li>
       </ul>
 
-      <a
+      <ButtonSecondary
         href="/#contact"
-        class="nav-link hover:opacity-100 btns--secondary inline-block lg:hidden"
+        class="nav-link hover:opacity-100 inline-block lg:hidden"
+        innerClass="border-b-2 border-b-current text-base block"
       >
-        <span
-          class="border-b-2 border-b-current text-base block btn--secondary btn--secondary-unhovered"
-          >{t.header.cta}</span
-        >
-        <span
-          class="border-b-2 border-b-current text-base block btn--secondary btn--secondary-hovered"
-          aria-hidden="true"
-        >
-          {t.header.cta}
-        </span>
-      </a>
+        {t.header.cta}
+      </ButtonSecondary>
     </div>
 
     <!-- Desktop CTA -->
-    <a
+    <ButtonSecondary
       href="/#contact"
-      class="nav-link hover:opacity-100 btns--secondary hidden lg:inline-block"
+      class="nav-link hover:opacity-100 hidden lg:inline-block"
+      innerClass="border-b-2 border-b-current text-base block"
     >
-      <span
-        class="border-b-2 border-b-current text-base block btn--secondary btn--secondary-unhovered"
-        >{t.header.cta}</span
-      >
-      <span
-        class="border-b-2 border-b-current text-base block btn--secondary btn--secondary-hovered"
-        aria-hidden="true"
-      >
-        {t.header.cta}
-      </span>
-    </a>
+      {t.header.cta}
+    </ButtonSecondary>
 
     <button
       id="hamburger"
