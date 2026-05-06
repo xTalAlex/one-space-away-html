@@ -91,7 +91,7 @@ const schemaData = {
     }
 
     <!-- Google JSON-LD Structured data -->
-    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaData)} />
 
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
