@@ -1,27 +1,125 @@
-# One Space Away - Interior Design Template
+# One Space Away — Interior Design Template
 
-**One Space Away** is single-page template built for interior designers, architects, and home stylists.
+A single-page template built for interior designers, architects, and home stylists. Lightweight, accessible, and performance-focused.
 
 <img width="1910" height="915" alt="PageSpeed Insights" src="https://github.com/user-attachments/assets/8b3bd9cf-6e91-4624-bda5-aa5cf71e950b" />
 
-**Features**
+## Features
 
-- Astro 6.0 Ready
-- Responsive: mobile, tablet, and desktop devices.
-- Stack: Astro (HTML, Tailwindcss, and JS) with minimal dependencies.
+- **Astro 6** — Static output, View Transitions, Content Collections
+- **Tailwind CSS v4** — CSS-first config, no `tailwind.config` file
+- **Alpine.js** — Declarative interactivity (menu, accordion, forms, video)
+- **Swiper.js** — Portfolio and testimonials carousels
+- **i18n ready** — Locale-based translations (English and Italian included)
+- **SEO** — Sitemap, Open Graph, Twitter Cards, JSON-LD structured data
+- **Legal pages** — Privacy Policy and Terms & Conditions via Markdown content collections
+- **No web fonts** — System font stacks for zero layout shifts and instant rendering
+- **Security headers** — `X-Frame-Options`, `X-Content-Type-Options`, CSP-ready
+- **Accessible** — Skip-to-content link, semantic HTML, ARIA attributes
+
+## Tech Stack
+
+| Layer         | Tool                                                                                                 |
+| ------------- | ---------------------------------------------------------------------------------------------------- |
+| Framework     | [Astro](https://astro.build) 6                                                                       |
+| Styling       | [Tailwind CSS](https://tailwindcss.com) 4                                                            |
+| Interactivity | [Alpine.js](https://alpinejs.dev) 3                                                                  |
+| Carousels     | [Swiper](https://swiperjs.com) 12                                                                    |
+| Icons         | [astro-icon](https://github.com/natemoo-re/astro-icon) + Iconify (`material-symbols-light`, `logos`) |
+| Formatting    | Prettier (Tailwind class sorting + import sorting)                                                   |
+| Linting       | Biome                                                                                                |
+| Deployment    | Cloudflare Pages (or any static host)                                                                |
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── assets/images/       # Optimized images (processed by Astro)
+├── components/          # Astro components
+│   └── ui/              # Reusable UI primitives (buttons, wrappers)
+├── content/legal/       # Markdown legal pages (en/, it/)
+├── i18n/                # Translations (en/, it/)
+├── layouts/             # Base and error layouts
+├── pages/               # Routes
+├── styles/              # Global CSS + Tailwind theme
+└── utils/               # Alpine init, Swiper factory
+public/                  # Static assets (favicon, OG image, headers)
+```
+
+## Configuration
+
+### Site settings
+
+Edit `src/consts.ts` to update company name, description, social links, and contact info.
+
+### Locale
+
+Set `LOCALE` in `src/consts.ts` (`"en"` or `"it"`). Translations live in `src/i18n/{locale}/`.
+
+### Theme
+
+Colors and fonts are configured in `src/styles/global.css` under `@theme`:
+
+```css
+@theme {
+  --font-sans:
+    Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+  --color-black: var(--color-zinc-950);
+  --color-white: var(--color-stone-50);
+}
+```
+
+### Icons
+
+Uses [Iconify](https://icon-sets.iconify.design/) via `astro-icon`. Add icon sets by installing `@iconify-json/{set-name}`.
+
+## Scripts
+
+| Command            | Description                          |
+| ------------------ | ------------------------------------ |
+| `npm run dev`      | Start dev server at `localhost:4321` |
+| `npm run build`    | Build static site to `dist/`         |
+| `npm run preview`  | Preview production build locally     |
+| `npm run check`    | Run Astro type checking              |
+| `npm run prettier` | Format all files in `src/`           |
 
 ## Fonts
 
-This template uses [Modern Font Stacks](https://modernfontstacks.com/) — system font families organized by typeface classification. No web fonts are downloaded, resulting in zero layout shifts and instant text rendering.
+Uses [Modern Font Stacks](https://modernfontstacks.com/) — system font families organized by typeface classification. No web fonts are downloaded.
 
-- **Sans-serif (body):** Geometric Humanist stack (`Avenir, Montserrat, Corbel, ...`)
+- **Body:** Geometric Humanist stack (`Avenir, Montserrat, Corbel, ...`)
 
-Font stacks are configured in `src/styles/global.css` under `@theme`.
+Configured in `src/styles/global.css` under `@theme`.
 
 ## Favicon
 
 Generated with [RealFaviconGenerator](https://realfavicongenerator.net/). Static files in `public/`.
 
-## Technical Details
+## Deployment
 
-Carousels: Powered by **Swiper.js.** Initialization logic is in `utils/baseSwiper.ts`.
+The template outputs static HTML and can be deployed to any static hosting provider:
+
+- **Cloudflare Pages** — includes `public/_headers` for security headers
+- Vercel, Netlify, GitHub Pages, etc.
+
+Set the `CANONICAL_URL` in `src/consts.ts` to your production domain before deploying.
+
+## License
+
+See [LICENSE](LICENSE) for details.
