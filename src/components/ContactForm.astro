@@ -2,6 +2,7 @@
 import ButtonPrimary from "@src/components/ui/ButtonPrimary.astro";
 import TextLink from "@src/components/ui/TextLink.astro";
 import { t } from "@src/i18n";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   termsHref: string;
@@ -61,21 +62,12 @@ const disclaimerParts = t.contact.form.disclaimer.split(
     class="flex flex-col items-start gap-4 xl:flex-row xl:items-center xl:justify-between"
   >
     <ButtonPrimary>{t.contact.form.submit}</ButtonPrimary>
-    <div class="max-w-75 text-xs">
+    <div class="max-w-80 text-xs">
       <span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          class="mb-0.5 inline w-4 stroke-2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          ><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"
-          ></path><path d="M12 8h.01"></path></svg
-        >
+        <Icon
+          name="material-symbols-light:info-outline"
+          class="mb-0.5 inline w-4"
+        />
       </span>
       <span>
         {

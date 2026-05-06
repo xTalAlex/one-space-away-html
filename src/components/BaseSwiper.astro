@@ -2,6 +2,7 @@
 import "@src/styles/swiper-custom.css";
 
 import ButtonPrimary from "@src/components/ui/ButtonPrimary.astro";
+import { Icon } from "astro-icon/components";
 import { t } from "@src/i18n";
 
 interface Props {
@@ -63,16 +64,7 @@ const {
               class={`nav-btn h-full w-full ${sliderName}-prev`}
               aria-label="Previous"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="h-6 w-6"
-              >
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
+              <Icon name="material-symbols-light:chevron-left" class="h-6 w-6" />
             </ButtonPrimary>
           </div>
           <div class="absolute top-1/2 right-0 z-10 hidden h-12 w-12 -translate-y-1/2 items-center justify-center overflow-hidden rounded-full shadow-lg md:flex">
@@ -81,16 +73,7 @@ const {
               class={`nav-btn h-full w-full ${sliderName}-next`}
               aria-label="Next"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="h-6 w-6"
-              >
-                <path d="M9 18l6-6-6-6" />
-              </svg>
+              <Icon name="material-symbols-light:chevron-right" class="h-6 w-6" />
             </ButtonPrimary>
           </div>
         </>

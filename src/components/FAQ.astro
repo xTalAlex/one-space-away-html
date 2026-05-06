@@ -1,6 +1,7 @@
 ---
 import SectionHeader from "@src/components/ui/SectionHeader.astro";
 import SectionWrapper from "@src/components/ui/SectionWrapper.astro";
+import { Icon } from "astro-icon/components";
 import { t } from "@src/i18n";
 
 const faqItems = t.faq.items;
@@ -26,16 +27,10 @@ const faqItems = t.faq.items;
             <span class="text-xl transition-all duration-300 in-[.active]:font-medium">
               {item.question}
             </span>
-            <svg
+            <Icon
+              name="material-symbols-light:add"
               class="h-5 w-5 shrink-0 transition-transform duration-300 in-[.active]:rotate-45"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path d="M12 5v14M5 12h14" />
-            </svg>
+            />
           </button>
           <div class="accordion-content h-0 overflow-hidden transition-[height] duration-300">
             <div class="translate-y-2.5 pb-3 opacity-0 transition-all duration-300 in-[.active]:translate-y-0 in-[.active]:opacity-100">
