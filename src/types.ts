@@ -1,4 +1,4 @@
-export type Config = {
+export type SiteConfig = {
   company_name: string;
   legal_name: string;
   title: string;
@@ -14,6 +14,8 @@ export type Config = {
     creator?: string; // twitter handle
     card?: "summary" | "summary_large_image" | "app" | "player";
   };
+
+  socials: Social[];
 };
 
 export type Social = {

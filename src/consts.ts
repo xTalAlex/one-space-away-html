@@ -1,12 +1,12 @@
-import type { Config, Social } from "@src/types";
+import type { SiteConfig, Social } from "@src/types";
 
-import config from "./data/config.json";
+import siteConfig from "./site.config";
 
-export const CONFIG: Config = {
-  ...config,
+export const CONFIG: SiteConfig = {
+  ...siteConfig,
   canonical_url: import.meta.env.DEV
     ? "http://localhost:4321"
-    : config.canonical_url,
+    : siteConfig.canonical_url,
 };
 
-export const SOCIALS: Social[] = config.socials;
+export const SOCIALS: Social[] = siteConfig.socials;
