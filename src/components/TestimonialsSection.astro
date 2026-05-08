@@ -147,30 +147,26 @@ const testimonials = [
   import { createSwiper } from "@src/utils/baseSwiper";
 
   function initTestimonialsSlider() {
-    const styles = getComputedStyle(document.documentElement);
-    const bp = (name: string) =>
-      parseFloat(styles.getPropertyValue(`--breakpoint-${name}`)) * 16;
-
     const swiper = createSwiper("testimonials", {
       pagination: {
         el: ".testimonials-pagination",
         clickable: true,
       },
       breakpoints: {
-        [bp("sm")]: { slidesPerView: 1, spaceBetween: 16 },
-        [bp("md")]: { slidesPerView: 2, spaceBetween: 96 },
-        [bp("lg")]: { slidesPerView: 2, spaceBetween: 76 },
-        [bp("xl")]: { slidesPerView: 3, spaceBetween: 76, loop: false },
+        640: { slidesPerView: 1, spaceBetween: 16 },
+        768: { slidesPerView: 2, spaceBetween: 96 },
+        1024: { slidesPerView: 2, spaceBetween: 76 },
+        1280: { slidesPerView: 3, spaceBetween: 76, loop: false },
       },
       on: {
         init: (swiper) => {
-          if (bp("xl") <= window.innerWidth) {
+          if (1280 <= window.innerWidth) {
             swiper.disable();
             swiper.el.classList.add("-non-slider");
           }
         },
         resize: (swiper) => {
-          if (bp("xl") <= window.innerWidth) {
+          if (1280 <= window.innerWidth) {
             swiper.disable();
             swiper.el.classList.add("-non-slider");
           } else {
