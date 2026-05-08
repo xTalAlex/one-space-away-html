@@ -3,11 +3,10 @@ import "@src/styles/global.css";
 
 import { CONFIG, SOCIALS } from "@consts";
 import Footer from "@src/components/Footer.astro";
+import GoogleTagManager from "@src/components/GoogleTagManager.astro";
 import Header from "@src/components/Header.astro";
 import { t } from "@src/i18n";
 import { ClientRouter } from "astro:transitions";
-
-const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 const {
   companyName = CONFIG.company_name,
@@ -97,19 +96,10 @@ const schemaData = {
       set:html={JSON.stringify(schemaData)}
     />
 
-    {
-      // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
-      // include google-site-verification tag in the heading
-      // Learn more: https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag
-      googleSiteVerification && (
-        <meta
-          name="google-site-verification"
-          content={googleSiteVerification}
-        />
-      )
-    }
+    <GoogleTagManager position="head" />
   </head>
   <body class="font-sans text-base text-black">
+    <GoogleTagManager position="body" />
     <a
       href="#main"
       class="absolute top-2.5 left-2 translate-y-[-200%] rounded-md bg-black px-4 py-3 text-white opacity-0 transition-opacity duration-200 ease-in-out focus-visible:z-100 focus-visible:translate-y-0 focus-visible:opacity-100 focus-visible:outline"
