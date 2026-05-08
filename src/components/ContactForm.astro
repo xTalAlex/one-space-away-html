@@ -2,7 +2,6 @@
 import ButtonPrimary from "@src/components/ui/ButtonPrimary.astro";
 import TextLink from "@src/components/ui/TextLink.astro";
 import { t } from "@src/i18n";
-import { Icon } from "astro-icon/components";
 
 interface Props {
   termsHref: string;
@@ -74,29 +73,43 @@ const disclaimerParts = t.contact.form.disclaimer.split(
   <div
     class="flex flex-col items-start gap-4 xl:flex-row xl:items-center xl:justify-between"
   >
-    <ButtonPrimary x-bind:disabled="sending">
-      <span x-show="!sending">{t.contact.form.submit}</span>
-      <span x-show="sending" x-cloak>SENDING...</span>
+    <ButtonPrimary x-bind:disabled="sending" class="grid">
+      <span
+        class="col-start-1 row-start-1"
+        x-bind:class="sending && 'invisible'">{t.contact.form.submit}</span
+      >
+      <span
+        x-show="sending"
+        x-cloak
+        class="col-start-1 row-start-1 flex items-center justify-center"
+      >
+        <span
+          class="h-5 w-5 animate-spin rounded-full border-2 border-white/20 border-t-white"
+        ></span>
+      </span>
     </ButtonPrimary>
-    <div class="max-w-80 text-xs">
-      <span>
-        <Icon
-          name="material-symbols-light:info-outline"
-          class="mb-0.5 inline w-4"
+    <div class="max-w-80">
+      <label class="flex items-start gap-2 text-xs">
+        <input
+          type="checkbox"
+          id="consent"
+          required
+          class="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-black"
         />
-      </span>
-      <span>
-        {
-          disclaimerParts.map((part) => {
-            const link = disclaimerLinks[part as keyof typeof disclaimerLinks];
-            return link ? (
-              <TextLink href={link.href}>{link.label}</TextLink>
-            ) : (
-              part
-            );
-          })
-        }
-      </span>
+        <span>
+          {
+            disclaimerParts.map((part) => {
+              const link =
+                disclaimerLinks[part as keyof typeof disclaimerLinks];
+              return link ? (
+                <TextLink href={link.href}>{link.label}</TextLink>
+              ) : (
+                part
+              );
+            })
+          }
+        </span>
+      </label>
     </div>
   </div>
   <div
