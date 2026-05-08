@@ -1,0 +1,88 @@
+---
+import { CONFIG, SOCIALS } from "@consts";
+import { SEO } from "astro-seo";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = `${CONFIG.company_name}: ${CONFIG.title}`,
+  description = CONFIG.description,
+  ogImage = CONFIG.og_image,
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+
+const socialImageURL = new URL(
+  ogImage ?? CONFIG.og_image ?? "og-image.webp",
+  Astro.url.origin,
+).href;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: title,
+  url: canonicalURL,
+  description: description,
+  isPartOf: {
+    "@type": "WebSite",
+    name: CONFIG.company_name,
+    url: canonicalURL,
+    publisher: {
+      "@type": "Organization",
+      name: CONFIG.company_name,
+      legalName: CONFIG.legal_name,
+      url: canonicalURL,
+      "@id": canonicalURL,
+      sameAs: SOCIALS.map((social) => social.href),
+    },
+  },
+};
+---
+
+<SEO
+  title={title}
+  description={description}
+  canonical={canonicalURL}
+  noindex={noindex}
+  openGraph={{
+    basic: {
+      title: title,
+      type: "website",
+      image: socialImageURL,
+      url: canonicalURL,
+    },
+    optional: {
+      description: description,
+      siteName: CONFIG.company_name,
+      locale: CONFIG.locale ?? "en",
+    },
+    image: {
+      alt: description,
+    },
+  }}
+  twitter={{
+    card: CONFIG.twitter?.card ?? "summary_large_image",
+    site: CONFIG.twitter?.creator,
+    creator: CONFIG.twitter?.creator,
+    title: title,
+    image: socialImageURL,
+    imageAlt: description,
+    description: description,
+  }}
+  extend={{
+    meta: [{ name: "author", content: CONFIG.legal_name }],
+    link: [{ rel: "sitemap", href: "/sitemap-index.xml" }],
+  }}
+/>
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(schemaData)}
+/>
