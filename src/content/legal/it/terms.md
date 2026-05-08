@@ -4,7 +4,7 @@ lastUpdated: "07-04-2025"
 ---
 
 > **Nota:** Questo è un esempio di Termini di Servizio per un sito web
-> portfolio realizzato con Astro e ospitato su Cloudflare. La parte relativa
+> portfolio realizzato con Astro e ospitato su Netlify. La parte relativa
 > alla licenza è comunque applicabile.
 
 Benvenuto su One Space Away Interiors, LLC.  

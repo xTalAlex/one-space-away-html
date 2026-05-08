@@ -4,7 +4,7 @@ lastUpdated: "07-04-2025"
 ---
 
 > **Nota:** Questo è un esempio di informativa sulla privacy per un sito web
-> realizzato con Astro e ospitato su Cloudflare.
+> realizzato con Astro e ospitato su Netlify.
 
 ## La Tua Privacy È Importante Per Noi
 

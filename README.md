@@ -27,8 +27,6 @@ A single-page template built for interior designers, architects, and home stylis
 | Carousels     | [Swiper](https://swiperjs.com) 12                                                                    |
 | Icons         | [astro-icon](https://github.com/natemoo-re/astro-icon) + Iconify (`material-symbols-light`, `logos`) |
 | Formatting    | Prettier (Tailwind class sorting + import sorting)                                                   |
-| Linting       | Biome                                                                                                |
-| Deployment    | Cloudflare Pages (or any static host)                                                                |
 
 ## Getting Started
 
@@ -138,7 +136,6 @@ Generated with [RealFaviconGenerator](https://realfavicongenerator.net/). Static
 
 The template outputs static HTML and can be deployed to any static hosting provider:
 
-- **Cloudflare Pages** — includes `public/_headers` for security headers
 - Vercel, Netlify, GitHub Pages, etc.
 
 Set the `CANONICAL_URL` in `src/consts.ts` to your production domain before deploying.

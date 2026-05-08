@@ -4,7 +4,7 @@ lastUpdated: "07-04-2025"
 ---
 
 > **Note:** This is just an example privacy policy for a website built with
-> Astro and hosted on Cloudflare.
+> Astro and hosted on Netlify.
 
 ## Your Privacy Is Important To Us
 
