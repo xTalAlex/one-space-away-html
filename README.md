@@ -66,7 +66,30 @@ public/                  # Static assets (favicon, OG image, headers)
 
 ### Site settings
 
-Edit `src/consts.ts` to update company name, description, social links, and contact info.
+Edit `src/site.config.ts` to update company name, description, social links, and contact info.
+
+### Environment Variables
+
+Copy `.env.example` to `.env` and fill in the values:
+
+| Variable                | Description                      |
+| ----------------------- | -------------------------------- |
+| `GOOGLE_TAG_MANAGER_ID` | GTM container ID (`GTM-XXXXXXX`) |
+
+All variables are optional — components render nothing when their env var is empty.
+
+### Google Tag Manager — Recommended Events
+
+Configure these events in GTM as tags with the corresponding triggers:
+
+| Event            | Trigger Type       | Selector / Condition                        | GA4 Use                                      |
+| ---------------- | ------------------ | ------------------------------------------- | -------------------------------------------- |
+| `generate_lead`  | Form Submission    | Form ID = `contact-form`                    | **Primary conversion** for Google Ads        |
+| `form_start`     | Element Visibility | `#contact-form input` (first field visible) | Micro-conversion — form abandonment funnel   |
+| `cta_click`      | Click — Just Links | Click URL contains `#contact`               | Micro-conversion — engaged visitors audience |
+| `scroll_contact` | Element Visibility | `#contact` (element on-screen)              | Intent signal — remarketing audience         |
+
+All events above use built-in GTM triggers — no custom JavaScript required.
 
 ### Locale
 
