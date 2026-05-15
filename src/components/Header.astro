@@ -7,8 +7,8 @@ import { t } from "@src/i18n";
   id="header"
   x-data="{ open: false }"
   x-on:keydown.escape.window="open = false"
-  x-bind:class="{ 'h-16 bg-white/50 shadow-sm backdrop-blur-xl': $store.header.scrolled, 'h-20': !$store.header.scrolled }"
-  class="fixed top-0 left-0 z-50 flex w-full px-4 transition-all duration-200 ease-in-out lg:px-8"
+  x-bind:class="{ 'h-16 bg-white/95 shadow-sm': $store.header.scrolled, 'h-20': !$store.header.scrolled }"
+  class="fixed top-0 left-0 z-50 flex h-20 w-full px-4 transition-all duration-200 ease-in-out lg:px-8"
 >
   <div
     x-show="open"
@@ -20,6 +20,7 @@ import { t } from "@src/i18n";
     x-transition:leave-end="opacity-0"
     x-on:click="open = false"
     class="fixed top-0 left-0 z-50 h-screen w-full bg-black/50 backdrop-blur-sm"
+    x-cloak
   >
   </div>
   <nav
@@ -35,19 +36,11 @@ import { t } from "@src/i18n";
 
     <div
       x-bind:class="open ? 'right-0' : '-right-full'"
-      class="max-lg:fixed max-lg:top-0 max-lg:z-50 max-lg:h-screen max-lg:w-full max-lg:max-w-75 max-lg:flex-col max-lg:justify-start max-lg:bg-white max-lg:px-4 max-lg:pt-28 max-lg:pb-8 max-lg:shadow-lg max-lg:transition-[right] max-lg:duration-300 max-lg:ease-in-out"
+      class="-right-full max-lg:fixed max-lg:top-0 max-lg:z-50 max-lg:h-screen max-lg:w-full max-lg:max-w-75 max-lg:flex-col max-lg:justify-start max-lg:bg-white max-lg:px-4 max-lg:pt-28 max-lg:pb-8 max-lg:shadow-lg max-lg:transition-[right] max-lg:duration-300 max-lg:ease-in-out"
     >
       <ul
         class="flex max-lg:mb-10 max-lg:flex-col max-lg:justify-start max-lg:gap-5"
       >
-        <li class="lg:mx-4">
-          <a
-            href="/"
-            x-on:click="open = false"
-            class="nav-link flex text-xl opacity-65 transition-all duration-200 ease-out hover:opacity-100 active:scale-95 active:opacity-100 lg:text-base"
-            >{t.header.nav.home}</a
-          >
-        </li>
         <li class="lg:mx-4">
           <a
             href="/#portfolio"
