@@ -1,49 +1,6 @@
 import type { SiteConfig } from "./types";
+import configData from "./data/config.json";
 
-const siteConfig: SiteConfig = {
-  company_name: "One Space Away",
-  legal_name: "One Space Away Interiors, LLC",
-  title: "Home, just the way you like.",
-  description:
-    "Discover the joy of living in a space that feels truly yours.",
-  canonical_url: "https://one-space-away-html.pages.dev",
-  locale: "en",
-  telephone: "(310) 555-2389",
-  email: "info@onespaceaway.com",
-  address: "456 Camden Drive, Suite 300, Beverly Hills, CA 90210",
-  og_image: "/og-image.webp",
-
-  twitter: {
-    creator: "@one_space_away",
-    card: "summary_large_image",
-  },
-
-  socials: [
-    {
-      name: "Instagram",
-      icon: "logos:instagram-icon",
-      label: "One Space Away on Instagram",
-      href: "https://www.instagram.com/",
-    },
-    {
-      name: "Facebook",
-      icon: "logos:facebook",
-      label: "One Space Away on Facebook",
-      href: "https://www.facebook.com/",
-    },
-    {
-      name: "Pinterest",
-      icon: "logos:pinterest",
-      label: "One Space Away on Pinterest",
-      href: "https://www.pinterest.com/",
-    },
-    {
-      name: "Youtube",
-      icon: "logos:youtube-icon",
-      label: "One Space Away on YouTube",
-      href: "https://www.youtube.com/",
-    },
-  ],
-};
+const siteConfig: SiteConfig = configData as SiteConfig;
 
 export default siteConfig;

@@ -1,0 +1,160 @@
+media:
+  input: src/assets/images
+  output: /src/assets/images
+
+content:
+  - name: config
+    label: Site Configuration
+    type: file
+    path: src/data/config.json
+    format: json
+    fields:
+      - name: company_name
+        label: Company Name
+        type: string
+      - name: legal_name
+        label: Legal Name
+        type: string
+      - name: title
+        label: Site Title
+        type: string
+      - name: description
+        label: Site Description
+        type: text
+      - name: canonical_url
+        label: Canonical URL
+        type: string
+      - name: locale
+        label: Locale
+        type: string
+      - name: telephone
+        label: Telephone
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: address
+        label: Address
+        type: string
+      - name: og_image
+        label: OG Image
+        type: image
+      - name: twitter
+        label: Twitter
+        type: object
+        fields:
+          - name: creator
+            label: Creator Handle
+            type: string
+          - name: card
+            label: Card Type
+            type: select
+            options:
+              values:
+                - summary
+                - summary_large_image
+                - app
+                - player
+      - name: socials
+        label: Social Media
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Platform Name
+            type: string
+          - name: icon
+            label: Icon (Iconify ID)
+            type: string
+          - name: label
+            label: Accessibility Label
+            type: string
+          - name: href
+            label: URL
+            type: string
+
+  - name: translations
+    label: Translations
+    type: group
+    items:
+      - name: en
+        label: English
+        type: group
+        items:
+          - name: translations-en-home
+            label: Home Page
+            type: file
+            path: src/i18n/en/home.json
+            format: json
+
+          - name: translations-en-ui
+            label: UI Elements
+            type: file
+            path: src/i18n/en/ui.json
+            format: json
+
+          - name: translations-en-errors
+            label: Error Pages
+            type: file
+            path: src/i18n/en/errors.json
+            format: json
+
+      - name: it
+        label: Italiano
+        type: group
+        items:
+          - name: translations-it-home
+            label: Home Page
+            type: file
+            path: src/i18n/it/home.json
+            format: json
+
+          - name: translations-it-ui
+            label: UI Elements
+            type: file
+            path: src/i18n/it/ui.json
+            format: json
+
+          - name: translations-it-errors
+            label: Error Pages
+            type: file
+            path: src/i18n/it/errors.json
+            format: json
+
+  - name: legal
+    label: Legal Pages
+    type: group
+    items:
+      - name: legal-en
+        label: English
+        type: collection
+        path: src/content/legal/en
+        extension: md
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: lastUpdated
+            label: Last Updated
+            type: string
+        view:
+          fields:
+            - title
+            - lastUpdated
+
+      - name: legal-it
+        label: Italiano
+        type: collection
+        path: src/content/legal/it
+        extension: md
+        fields:
+          - name: title
+            label: Title
+            type: string
+          - name: lastUpdated
+            label: Last Updated
+            type: string
+        view:
+          fields:
+            - title
+            - lastUpdated
