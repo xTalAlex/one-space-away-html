@@ -45,15 +45,7 @@
   },
   "testimonials": {
     "tag": "TESTIMONIANZE",
-    "title": "Case vere, storie vere.",
-    "items": [
-      {
-        "content": "Lavorare con One Space Away ha trasformato non solo la nostra casa, ma il modo in cui la viviamo. La loro attenzione ai dettagli e la comprensione delle nostre esigenze sono state eccezionali."
-      },
-      {
-        "content": "Avevo un'idea generale di quello che volevo ma non ero sicura di come mettere tutto insieme. Mi hanno aiutata a perfezionare la mia visione e hanno creato uno spazio che sembra naturale e perfettamente mio."
-      }
-    ]
+    "title": "Case vere, storie vere."
   },
   "process": {
     "tag": "COME FUNZIONA",

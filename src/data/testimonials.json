@@ -1,0 +1,29 @@
+[
+  {
+    "type": "image",
+    "client": {
+      "name": "Sarah Johnson",
+      "location": "Beverly Hills, California",
+      "image": "https://res.cloudinary.com/dellp9a4z/image/upload/v1774625626/sarah-johnson.jpg"
+    }
+  },
+  {
+    "type": "image",
+    "client": {
+      "name": "Emma Lewis",
+      "location": "Palm Beach, Florida",
+      "image": "https://res.cloudinary.com/dellp9a4z/image/upload/v1774625626/emma.jpg"
+    }
+  },
+  {
+    "type": "video",
+    "client": {
+      "name": "Charlotte Bennett",
+      "location": "Austin, Texas"
+    },
+    "video": {
+      "src": "https://res.cloudinary.com/dellp9a4z/video/upload/v1774625626/charlotte_iy65kg.webm",
+      "poster": "testimonial-video-placeholder.webp"
+    }
+  }
+]

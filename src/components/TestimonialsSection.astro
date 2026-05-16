@@ -2,47 +2,10 @@
 import BaseSwiper from "@src/components/BaseSwiper.astro";
 import SectionHeader from "@src/components/ui/SectionHeader.astro";
 import SectionWrapper from "@src/components/ui/SectionWrapper.astro";
+import testimonials from "@src/data/testimonials.json";
 import { t } from "@src/i18n";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
-
-import emmaImage from "/src/assets/images/emma.jpg";
-import sarahJohnsonImage from "/src/assets/images/sarah-johnson.jpg";
-
-const testimonials = [
-  {
-    id: 1,
-    type: "image",
-    client: {
-      name: "Sarah Johnson",
-      location: "Beverly Hills, California",
-      image: sarahJohnsonImage,
-    },
-    content: t.testimonials.items[0].content,
-  },
-  {
-    id: 2,
-    type: "image",
-    client: {
-      name: "Emma Lewis",
-      location: "Palm Beach, Florida",
-      image: emmaImage,
-    },
-    content: t.testimonials.items[1].content,
-  },
-  {
-    id: 3,
-    type: "video",
-    client: {
-      name: "Charlotte Bennett",
-      location: "Austin, Texas",
-    },
-    video: {
-      src: "https://res.cloudinary.com/dellp9a4z/video/upload/v1774625626/charlotte_iy65kg.webm",
-      poster: "testimonial-video-placeholder.webp",
-    },
-  },
-];
 ---
 
 <SectionWrapper id="testimonials">
@@ -50,7 +13,7 @@ const testimonials = [
 
   <BaseSwiper sliderName="testimonials" navigation={false}>
     {
-      testimonials.map((testimonial) => (
+      testimonials.map((testimonial, index) => (
         <div class="swiper-slide">
           <article
             class:list={[
@@ -61,20 +24,35 @@ const testimonials = [
             {testimonial.type === "image" ? (
               <>
                 <div class="mt-8 mb-6 flex items-center gap-4 p-4 md:p-0">
-                  <div class="h-20 w-20 shrink-0 overflow-hidden rounded-full">
-                    <Image
-                      class="h-full w-full object-cover"
-                      src={testimonial.client.image as ImageMetadata}
-                      alt={testimonial.client.name}
-                      width={160}
-                      height={160}
-                    />
-                  </div>
+                  {testimonial.client.image && (
+                    <div class="h-20 w-20 shrink-0 overflow-hidden rounded-full">
+                      {typeof testimonial.client.image === "string" ? (
+                        <img
+                          class="h-full w-full object-cover"
+                          src={testimonial.client.image}
+                          alt={testimonial.client.name}
+                          width={160}
+                          height={160}
+                          loading="lazy"
+                        />
+                      ) : (
+                        <Image
+                          class="h-full w-full object-cover"
+                          src={testimonial.client.image as ImageMetadata}
+                          alt={testimonial.client.name}
+                          width={160}
+                          height={160}
+                        />
+                      )}
+                    </div>
+                  )}
                   <div class="flex flex-col gap-1">
                     <cite class="text-xl font-semibold not-italic">
                       {testimonial.client.name}
                     </cite>
-                    <span>{testimonial.client.location}</span>
+                    {testimonial.client.location && (
+                      <span>{testimonial.client.location}</span>
+                    )}
                   </div>
                 </div>
                 <blockquote class="p-4 md:p-0">
@@ -83,7 +61,7 @@ const testimonials = [
               </>
             ) : (
               <div
-                id={`video-${testimonial.id}`}
+                id={`video-${index}`}
                 x-data="{ playing: false }"
                 class="relative h-full w-full bg-black"
                 x-bind:class="{ 'before:opacity-0': playing }"
@@ -111,9 +89,11 @@ const testimonials = [
                     <cite class="text-xl font-semibold not-italic drop-shadow-sm">
                       {testimonial.client.name}
                     </cite>
-                    <span class="drop-shadow-sm">
-                      {testimonial.client.location}
-                    </span>
+                    {testimonial.client.location && (
+                      <span class="drop-shadow-sm">
+                        {testimonial.client.location}
+                      </span>
+                    )}
                   </div>
                   <button
                     type="button"

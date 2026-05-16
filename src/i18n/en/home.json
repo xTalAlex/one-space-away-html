@@ -45,15 +45,7 @@
   },
   "testimonials": {
     "tag": "TESTIMONIALS",
-    "title": "Real homes, real stories.",
-    "items": [
-      {
-        "content": "Working with One Space Away transformed not just our home, but how we live in it. Their attention to detail and understanding of our needs was exceptional."
-      },
-      {
-        "content": "I had a general idea of what I wanted but wasn't sure how to bring it all together. They helped refine my vision and created a space that feels effortless and perfectly me."
-      }
-    ]
+    "title": "Real homes, real stories."
   },
   "process": {
     "tag": "HOW IT WORKS",
