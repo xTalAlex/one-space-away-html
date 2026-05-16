@@ -159,10 +159,19 @@ const currentYear = new Date().getFullYear();
     class="flex flex-wrap justify-between gap-x-12 gap-y-1.5 font-medium sm:gap-12 lg:flex-nowrap lg:gap-0"
   >
     <div>
-      <p>&copy; {CONFIG.company_name} {currentYear}.</p>
+      <p>{CONFIG.address} - {t.footer.vatLabel} {CONFIG.vat_number}</p>
     </div>
     <div>
-      <p>{t.footer.location}</p>
+      <p>
+        {t.footer.developedBy}
+        <a
+          href={CONFIG.dev?.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="transition-all duration-200 ease-in-out hover:text-black active:text-black"
+          >{CONFIG.dev?.name}</a
+        >
+      </p>
     </div>
   </div>
 </footer>

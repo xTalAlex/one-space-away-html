@@ -8,6 +8,7 @@ export type SiteConfig = {
   telephone: string;
   email: string;
   address: string;
+  vat_number?: string;
   og_image: string;
 
   twitter?: {
@@ -16,6 +17,11 @@ export type SiteConfig = {
   };
 
   socials: Social[];
+
+  dev?: {
+    name: string;
+    url: string;
+  };
 };
 
 export type Social = {

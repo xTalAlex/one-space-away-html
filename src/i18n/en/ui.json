@@ -19,6 +19,8 @@
     "emailLabel": "E.",
     "copyright": "All rights reserved.",
     "location": "Based in Beverly Hills, California.",
+    "vatLabel": "VAT",
+    "developedBy": "Developed by ",
     "links": {
       "privacyPolicy": "Privacy Policy",
       "termsConditions": "Terms & Conditions",

@@ -8,6 +8,7 @@
   "telephone": "(310) 555-2389",
   "email": "info@onespaceaway.com",
   "address": "456 Camden Drive, Suite 300, Beverly Hills, CA 90210",
+  "vat_number": "",
   "og_image": "/og-image.webp",
   "twitter": {
     "creator": "@one_space_away",
@@ -38,5 +39,9 @@
       "label": "One Space Away on YouTube",
       "href": "https://www.youtube.com/"
     }
-  ]
+  ],
+  "dev": {
+    "name": "",
+    "url": ""
+  }
 }
